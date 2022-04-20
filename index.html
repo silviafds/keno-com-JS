@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keno</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="./src/validarDados.js"></script>
+</head>
+
+<body>
+
+    <div class="pai">
+        
+        <div class="dados">
+            <h2>Bem vindo ao Keno</h2>
+            <h3>Preencha os campos para jogar</h3>
+
+            <form action="get" id="formulario">
+
+                <p>Digite o valor que deseja apostar.</p>
+
+                <input type="text" name="valorAposta" placeholder="Informe valor da aposta" id="valorApostar" onblur="validaValorApostado()">
+
+                <p id="respostaValorAposta"></p>
+
+
+
+                <p>Digite os números que deseja apostar.</p>
+                <input type="text" name="NumerosAposta" id="NumerosApostar" onblur="validaNumerosApostados()">
+
+                <p id="respostaNumerosAposta"></p>
+                
+                <button type="button" value="Input Button" class="botaoEntrar" onclick="validaDados()">Começar Jogo</button>
+                
+            </form>
+
+        </div>
+
+    </div>
+    
+    
+</body>
+</html>
