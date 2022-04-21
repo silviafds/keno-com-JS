@@ -36,10 +36,11 @@ function validaNumApostados() {
     var novoVetor = Array.from(xx); //transforma em novo array
     
     var vetorNumerosOrdenados = ordenaNumeros(novoVetor);
+    var recebeValorRepeticao = buscaNumerosRepetidos(vetorNumerosOrdenados);
 
     if(50 > 6) {
         document.getElementById("numeroApostado").style.borderColor = "red";
-        document.getElementById("respostaNumApostados").innerHTML = vetorNumerosOrdenados;
+        document.getElementById("respostaNumApostados").innerHTML = recebeValorRepeticao;
         
         return false;
     }
@@ -49,11 +50,11 @@ function validaNumApostados() {
 /* Função na qual coloca os números apostados em ordem crescente 
     @vetorOrdenado vetor com os números em ordem crescente
 */
-function ordenaNumeros(novoVetor_) {
+function ordenaNumeros(vetorNumerosDesordenados_) {
     var vetorOrdenado = [];
 
-    for(var i = 0; i < novoVetor_.length; i++) { //converte string para int
-        vetorOrdenado[i] = parseInt(novoVetor_[i]);
+    for(var i = 0; i < vetorNumerosDesordenados_.length; i++) { //converte string para int
+        vetorOrdenado[i] = parseInt(vetorNumerosDesordenados_[i]);
     }
 
     vetorOrdenado.sort(function (a, b) { //números ficam em ordem crescente
@@ -63,3 +64,6 @@ function ordenaNumeros(novoVetor_) {
     return vetorOrdenado;
 }
 
+function buscaNumerosRepetidos(vetorOrdenado_) {
+    return (new Set(vetorOrdenado_)).size !== vetorOrdenado_.length;
+}
