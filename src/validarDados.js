@@ -37,10 +37,11 @@ function validaNumApostados() {
     
     var vetorNumerosOrdenados = ordenaNumeros(novoVetor);
     var recebeValorRepeticao = buscaNumerosRepetidos(vetorNumerosOrdenados);
+    var recebeQtdNumerosApostados = validaQuantidadeNumerosApostado(vetorNumerosOrdenados);
 
     if(50 > 6) {
         document.getElementById("numeroApostado").style.borderColor = "red";
-        document.getElementById("respostaNumApostados").innerHTML = recebeValorRepeticao;
+        document.getElementById("respostaNumApostados").innerHTML = recebeQtdNumerosApostados;
         
         return false;
     }
@@ -64,6 +65,15 @@ function ordenaNumeros(vetorNumerosDesordenados_) {
     return vetorOrdenado;
 }
 
+/* Função busca elemento repetido no vetor */
 function buscaNumerosRepetidos(vetorOrdenado_) {
     return (new Set(vetorOrdenado_)).size !== vetorOrdenado_.length;
+}
+
+/* Função valida quantidade de numeros */
+function validaQuantidadeNumerosApostado(vetorNumerosOrdenados_) {
+    if (vetorNumerosOrdenados_.length > 15 || vetorNumerosOrdenados_.length < 1) {
+        return 1;
+    }
+    return 0;
 }
