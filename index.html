@@ -20,19 +20,28 @@
             <form action="get" id="formulario">
 
                 <p>Digite o valor que deseja apostar.</p>
-
                 <input type="text" name="valorAposta" placeholder="Informe valor da aposta" id="valorApostar" onblur="validaValorApostado()">
-
                 <p id="respostaValorAposta"></p>
 
 
+                <p>Informe quantas rodadas você quer participar</p>
+                <input type="number" name="numRodadas" id="numeroRodadas"  onblur="validaNumRodadas()">
+                <p id="respostaNumeroRodadas"></p>
 
-                <p>Digite os números que deseja apostar.</p>
-                <input type="text" name="NumerosAposta" id="NumerosApostar" onblur="validaNumerosApostados()">
 
-                <p id="respostaNumerosAposta"></p>
+                <p>Informe quantos números você quer apostar.</p>
+                <input type="text" name="numAposta[]" id="numeroApostado"
+                onblur="validaNumApostados()">
+                <p id="respostaNumApostados"></p>
+
+                <input type="text" name="array[]" value="" /><br>
+                <input type="text" name="array[]" value="" /><br>
+                <input type="text" name="array[]" value="" /><br>
+                <input type="text" name="array[]" value="" /><br>
+                <input type="text" name="array[]" value="" /><br>
                 
-                <button type="button" value="Input Button" class="botaoEntrar" onclick="validaDados()">Começar Jogo</button>
+
+                <button type="button" value="Input Button" class="botaoEntrar" onclick="validaNum()">Começar Jogo</button>
                 
             </form>
 

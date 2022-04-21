@@ -52,7 +52,22 @@ body {
     margin-top: 0;
 }
 
-#NumerosApostar {
+#numeroRodadas {
+    text-align: center;
+    background-color: aliceblue;
+    border-color: black;
+    border-radius: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    width: 250px;
+    margin-bottom: 35px;
+}
+
+#respostaNumeroRodadas {
+    margin: 0;
+}
+
+#numeroApostado {
     text-align: center;
     background-color: aliceblue;
     border-color: black;
@@ -63,7 +78,7 @@ body {
     margin-bottom: 35px;
 }
 
-#respostaNumerosAposta {
+#respostaNumApostados {
     margin-top: 0;
 }
 
