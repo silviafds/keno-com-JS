@@ -32,74 +32,34 @@ function validaNumRodadas() {
 
 function validaNumApostados() {
     var recebeNumerosApostados = document.getElementById("numeroApostado").value;
-    var xx = recebeNumerosApostados.split(" ");
-    var novoVetor = Array.from(xx);
+    var xx = recebeNumerosApostados.split(" "); //retira espaços desnecessários
+    var novoVetor = Array.from(xx); //transforma em novo array
     
-    var vetorNum = [];
+    var vetorNumerosOrdenados = ordenaNumeros(novoVetor);
 
-    for(var i = 0; i < novoVetor.length; i++) {
-        vetorNum[i] = parseInt(novoVetor[i]);
-    }
-
-    vetorNum.sort(function (a, b) {
-	    return (a > b) ? 1 : ((b > a) ? -1 : 0);
-    });
-        
     if(50 > 6) {
         document.getElementById("numeroApostado").style.borderColor = "red";
-        document.getElementById("respostaNumApostados").innerHTML = vetorNum;
+        document.getElementById("respostaNumApostados").innerHTML = vetorNumerosOrdenados;
         
         return false;
     }
     return true;
 }
 
-/*function validaNum() {
-    var input = document.getElementsByName('array[]');
-    var aux;
-    /*var input2 = x(input);*/
-    /*for(var i = 0; i <input.length; i++) {
-        if(input[i] > input[i+1]) {
-            aux = input[i];
-            input[i] = input[i+1];
-            input[i+1] = aux;
-        }
-    }*/
-/*    
-    for(var i = 0; i <input.length; i++) {
-        document.getElementById("respostaNumApostados").innerHTML = input[i];
+/* Função na qual coloca os números apostados em ordem crescente 
+    @vetorOrdenado vetor com os números em ordem crescente
+*/
+function ordenaNumeros(novoVetor_) {
+    var vetorOrdenado = [];
+
+    for(var i = 0; i < novoVetor_.length; i++) { //converte string para int
+        vetorOrdenado[i] = parseInt(novoVetor_[i]);
     }
-    //document.getElementById("respostaNumApostados").innerHTML = input[];
 
-}*/
-
-/*function x(input1) {
-    input1.sort((a, b) => {
-        if(a > b) return 1;
-        if(a < b) return -1;
-
-        return 0;
+    vetorOrdenado.sort(function (a, b) { //números ficam em ordem crescente
+	    return (a > b) ? 1 : ((b > a) ? -1 : 0);
     });
 
-}*/
+    return vetorOrdenado;
+}
 
-/*function converteStringToInt(_recebeNumerosApostados) {
-    var array = _recebeNumerosApostados.split(" ");
-    length = array.length;
-    var ArrayN = [];
-
-
-    var arrayNew = [];
-    length = array.length;
-    for(var i = 0; i <length; i++){
-        /*if(_recebeNumerosApostados != "NaN") {
-            arrayNew.push(parseInt(_recebeNumerosApostados[i]));
-        }*/
- /*       arrayNew.push(parseInt(_recebeNumerosApostados[i]));
-    }
-    return arrayNew;
-}*/
-
-/*function ordemCrescente(numConvertido) {
-
-}*/
