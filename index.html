@@ -19,29 +19,47 @@
 
             <form action="get" id="formulario">
 
-                <p>Digite o valor que deseja apostar.</p>
-                <input type="text" name="valorAposta" placeholder="Informe valor da aposta" id="valorApostar" onblur="validaValorApostado()">
-                <p id="respostaValorAposta"></p>
-
-
-                <p>Informe quantas rodadas você quer participar</p>
-                <input type="number" name="numRodadas" id="numeroRodadas"  onblur="validaNumRodadas()">
-                <p id="respostaNumeroRodadas"></p>
-
-
-                <p>Informe quantos números você quer apostar.</p>
-                <input type="text" name="numAposta[]" id="numeroApostado"
-                onblur="validaNumApostados()">
-                <p id="respostaNumApostados"></p>
-
-                <input type="text" name="array[]" value="" /><br>
-                <input type="text" name="array[]" value="" /><br>
-                <input type="text" name="array[]" value="" /><br>
-                <input type="text" name="array[]" value="" /><br>
-                <input type="text" name="array[]" value="" /><br>
+                <div id="infoValorAposta">
+                    <div>Digite o valor que deseja apostar. </div>
+                    <div id="passar_mouse"> !! <div id="mostrar"> Valor mínimo de aposta R$: 1,00</div></div>
+                </div>
+                <div id="QuadroAposta">
+                    <input type="text" name="valorAposta" placeholder="Informe valor da aposta" id="valorApostar" onblur="validaValorApostado()">
+                    <div id="imagemIcon">
+                        <img id="iconValidacao" src="./icones/correcao.png" alt="icone">
+                        <img id="iconInvalidacao" src="./icones/multiplicar.png" alt="icone">
+                    </div>
+                    
+                </div>
                 
 
-                <button type="button" value="Input Button" class="botaoEntrar" onclick="validaNum()">Começar Jogo</button>
+                <div id="infoValorAposta">
+                    <div>Informe quantas rodadas você quer participar. </div>
+                    <div id="passar_mouse"> !! <div id="mostrar"> Mínimo 1 aposta. </div></div>
+                </div>
+                <div id="QuadroNumeroAposta">
+                    <input type="number" name="numRodadas" placeholder="Informe número de apostas" id="numeroRodadas"  onblur="validaNumRodadas()">
+                    <div id="imagemIcon">
+                        <img id="iconValidacaoRodadas" src="./icones/correcao.png" alt="icone">
+                        <img id="iconInvalidacaoRodadas" src="./icones/multiplicar.png" alt="icone">
+                    </div>
+                </div>
+
+
+                <div id="infoValorAposta">
+                    <div>Informe os números que você que apostar. </div>
+                    <div id="passar_mouse"> !! <div id="mostrar"> Máximo 15 números. </div></div>
+                </div>
+                <div id="QuadroNumerosEscolhidos">
+                    <input type="text" name="numAposta[]" placeholder="Sem repetir números." id="numeroApostado" onblur="validaNumApostados()">
+                    <div id="imagemIcon">
+                        <img id="iconValidacaoNumeros" src="./icones/correcao.png" alt="icone">
+                        <img id="iconInvalidacaoNumeros" src="./icones/multiplicar.png" alt="icone">
+                    </div>
+                </div>
+                
+
+                <button type="button" value="Input Button" class="botaoEntrar" onclick="validaDadosFornecidos()">Começar Jogo</button>
                 
             </form>
 
