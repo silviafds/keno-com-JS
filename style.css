@@ -37,6 +37,41 @@ body {
     align-items: center;
 }
 
+#infoValorAposta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#mostrar {
+    display: none;
+    border-radius: 5px;
+    width: 120px;
+    padding: 4px;
+    border: 2px solid rgb(2, 2, 22);
+    position: relative;
+    left: 80px;
+    top: -20px;
+    margin-right: -110px;
+}
+
+#passar_mouse {
+    color: red;
+    font-weight: bolder;
+    margin-left: 6px;
+    background-color: rgb(198, 201, 200);
+    border-radius: 6px;
+    padding-left: 1.5px;
+    padding-right: 1.5px;
+}
+
+#passar_mouse:hover #mostrar {
+    display: flex;
+    margin-bottom: -50px;
+    margin-left: -15px;
+}
+
 #valorApostar {
     text-align: center;
     background-color: aliceblue;
@@ -48,8 +83,40 @@ body {
     margin-bottom: 35px;
 }
 
-#respostaValorAposta {
-    margin-top: 0;
+#QuadroAposta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#imagemIcon {
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#iconValidacao, #iconInvalidacao, #iconValidacaoRodadas, #iconInvalidacaoRodadas, #iconValidacaoNumeros, #iconInvalidacaoNumeros {
+    display: none;
+    width: 20px;
+    height: auto;
+}
+
+/*numero de rodadas*/
+
+#QuadroNumeroAposta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/*numeros escolhis para a aposta*/
+
+#QuadroNumerosEscolhidos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 #numeroRodadas {
@@ -74,7 +141,7 @@ body {
     border-radius: 1em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    width: 450px;
+    width: 320px;
     margin-bottom: 35px;
 }
 
