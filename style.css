@@ -14,6 +14,7 @@ body {
     height: 90vh;
 }
 
+/***** div que guarda o formulario *******/
 .dados {
     display: flex;
     flex-direction: column;
@@ -30,6 +31,8 @@ body {
     margin-top: 0;
 }
 
+
+/********** inicio do formulario ************/
 .formulario {
     display: flex;
     flex-direction: column;
@@ -37,6 +40,7 @@ body {
     align-items: center;
 }
 
+/*** div responsavel por informar cada espaço fdo formulario*/
 #infoValorAposta {
     display: flex;
     flex-direction: row;
@@ -44,32 +48,12 @@ body {
     margin-bottom: 20px;
 }
 
-#mostrar {
-    display: none;
-    border-radius: 5px;
-    width: 120px;
-    padding: 4px;
-    border: 2px solid rgb(2, 2, 22);
-    position: relative;
-    left: 80px;
-    top: -20px;
-    margin-right: -110px;
-}
-
-#passar_mouse {
-    color: red;
-    font-weight: bolder;
-    margin-left: 6px;
-    background-color: rgb(198, 201, 200);
-    border-radius: 6px;
-    padding-left: 1.5px;
-    padding-right: 1.5px;
-}
-
-#passar_mouse:hover #mostrar {
+/*** div responsavel por guardar valor da aposta*/
+#QuadroAposta {
     display: flex;
-    margin-bottom: -50px;
-    margin-left: -15px;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 #valorApostar {
@@ -83,36 +67,22 @@ body {
     margin-bottom: 35px;
 }
 
-#QuadroAposta {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
+/**** div que guarda os icones de validação *****/
 #imagemIcon {
     margin-left: 5px;
     margin-top: 5px;
 }
 
+/***** icone das validações do formulario *****/
 #iconValidacao, #iconInvalidacao, #iconValidacaoRodadas, #iconInvalidacaoRodadas, #iconValidacaoNumeros, #iconInvalidacaoNumeros {
     display: none;
     width: 20px;
     height: auto;
 }
 
-/*numero de rodadas*/
+/******* numero de rodadas *******/
 
 #QuadroNumeroAposta {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-/*numeros escolhis para a aposta*/
-
-#QuadroNumerosEscolhidos {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -130,8 +100,12 @@ body {
     margin-bottom: 35px;
 }
 
-#respostaNumeroRodadas {
-    margin: 0;
+/*******numeros escolhidos para a aposta *******/
+#QuadroNumerosEscolhidos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 #numeroApostado {
@@ -145,19 +119,7 @@ body {
     margin-bottom: 35px;
 }
 
-#respostaNumApostados {
-    margin-top: 0;
-}
-
-
-.botao {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 0.5em;
-}
-
+/**** botao para enviar os dados ****/
 .botaoEntrar {
     background-color: darkgreen;
     width: 250px;
@@ -167,4 +129,34 @@ body {
     color: white;
     font-weight: bold;
     font-size: 17px;
+}
+
+/* div corresponde a mostrar informação oculta*/
+#mostrar {
+    display: none;
+    border-radius: 5px;
+    width: 120px;
+    padding: 4px;
+    border: 2px solid rgb(2, 2, 22);
+    position: relative;
+    left: 80px;
+    top: -20px;
+    margin-right: -110px;
+}
+
+/* div corresponde a passar o mouse p/ solicitar ajuda*/
+#passar_mouse {
+    color: red;
+    font-weight: bolder;
+    margin-left: 6px;
+    background-color: rgb(198, 201, 200);
+    border-radius: 6px;
+    padding-left: 1.5px;
+    padding-right: 1.5px;
+}
+
+#passar_mouse:hover #mostrar {
+    display: flex;
+    margin-bottom: -50px;
+    margin-left: -15px;
 }
