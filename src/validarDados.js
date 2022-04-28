@@ -9,7 +9,7 @@ function validaValorApostado() {
         document.getElementById("iconValidacao").style.display = "none";
         return false;
     }
-
+    document.getElementById("valorApostar").style.border = "solid";
     document.getElementById("valorApostar").style.borderColor = "green";
     document.getElementById("iconValidacao").style.display = "flex";
     document.getElementById("iconInvalidacao").style.display = "none";
@@ -26,7 +26,7 @@ function validaNumRodadas() {
         document.getElementById("iconValidacaoRodadas").style.display = "none";
         return false;
     }
-
+    document.getElementById("numeroRodadas").style.border = "solid";
     document.getElementById("numeroRodadas").style.borderColor = "green";
     document.getElementById("iconInvalidacaoRodadas").style.display = "none";
     document.getElementById("iconValidacaoRodadas").style.display = "flex";
@@ -44,6 +44,7 @@ function validaNumApostados() {
     var recebeQtdNumerosApostados = validaQuantidadeNumerosApostado(vetorNumerosOrdenados);
 
     if(recebeValorRepeticao == false && recebeQtdNumerosApostados == 0) {
+        document.getElementById("numeroApostado").style.border = "solid";
         document.getElementById("numeroApostado").style.borderColor = "green";
         document.getElementById("iconValidacaoNumeros").style.display = "flex"
         document.getElementById("iconInvalidacaoNumeros").style.display = "none"
