@@ -9,9 +9,13 @@
     <script type="text/javascript" src="./src/validarDados.js"></script>
 </head>
 
-<body>
+<body class="pai">
 
-    <div class="pai">
+    <div class="barraSuperior">
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sapiente</h2>
+    </div>
+
+    <div class="filho1">
         
         <div class="dados">
             <h2>Bem vindo ao Keno</h2>
@@ -24,7 +28,7 @@
                     <div id="passar_mouse"> !! <div id="mostrar"> Valor mínimo de aposta R$: 1,00</div></div>
                 </div>
                 <div id="QuadroAposta">
-                    <input type="text" name="valorAposta" placeholder="Informe valor da aposta" id="valorApostar" onblur="validaValorApostado()">
+                    <input type="number" name="valorAposta" placeholder="Informe valor da aposta." id="valorApostar" onblur="validaValorApostado()">
                     <div id="imagemIcon">
                         <img id="iconValidacao" src="./icones/correcao.png" alt="icone">
                         <img id="iconInvalidacao" src="./icones/multiplicar.png" alt="icone">
@@ -38,7 +42,7 @@
                     <div id="passar_mouse"> !! <div id="mostrar"> Mínimo 1 aposta. </div></div>
                 </div>
                 <div id="QuadroNumeroAposta">
-                    <input type="number" name="numRodadas" placeholder="Informe número de apostas" id="numeroRodadas"  onblur="validaNumRodadas()">
+                    <input type="number" name="numRodadas" placeholder="Informe número de apostas." id="numeroRodadas"  onblur="validaNumRodadas()">
                     <div id="imagemIcon">
                         <img id="iconValidacaoRodadas" src="./icones/correcao.png" alt="icone">
                         <img id="iconInvalidacaoRodadas" src="./icones/multiplicar.png" alt="icone">
@@ -58,13 +62,28 @@
                     </div>
                 </div>
                 
-
                 <button type="button" value="Input Button" class="botaoEntrar" onclick="validaDadosFornecidos()">Começar Jogo</button>
                 
             </form>
 
         </div>
 
+    </div>
+
+    <div class="filho2">
+        <div class="regras">
+            <h1>Regras</h1>
+            <p>* O valor mínimo de aposta é R$: 1,00 (um real).</p>
+            <p>* O número mínimo de de rodadas a ser jogada é 1.</p>
+            <p>* Escolher no mínimo 1 número e no máximo até 15 números entre 0 e 80, sem que haja repetição.</p>
+            <p>* Após escolhido o número de rodadas, será dividido o valor apostado pelo número de rodadas, para assim descobrir quanto será apostado em cada rodada. Exemplo:<br>
+            Valor apostado: 1.500,00 (um mil e quinhentos reais);<br>
+            Número de rodadas: 3. <br>
+            Então cada rodada valerá R$: 500,00 (quinhentos reais).
+            </p>
+
+        </div>
+        
     </div>
     
     
