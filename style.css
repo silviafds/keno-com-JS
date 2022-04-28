@@ -1,17 +1,52 @@
-body {
-    margin: 0;
+body, html {
+    height: 100%;
 }
 
-.pai {
-    background-color: white;
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+
+.barraSuperior {
+    width: 100%;
+    height: 50px;
+    background-color: #B8000C;
+    margin: 0% 0px 00px 0px;
+    padding: 10px 0px 20px 0px;
+}
+
+.filho1 {
+    background-color: #102837;
+    width: 40%;
+    height: 91.8%;
+    float: left;
+    margin-bottom: 0%
+}
+
+.filho2 {
+    width: 60%;
+    height: 91.8%;
+    float: right;
+    margin-bottom: 0%;
+    padding-right: 0%;
+    background-color: #0c151c;
+}
+
+/**** div com as regras do jogo ****/
+.regras {
+    background-color: #102837;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-content: center;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 90vh;
+    width: 920px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #B8000C;
+    color: white;
+    margin: 100px 0px 0px 100px;
+    padding: 10px;
 }
 
 /***** div que guarda o formulario *******/
@@ -21,16 +56,19 @@ body {
     text-align: center;
     align-content: center;
     width: 720px;
-    height: 700px;
+    height: auto;
     border-radius: 5px;
-    border: 3px solid rgb(15, 93, 11);
+    /*background-color: #212223e4;*/
+    background-color: #0c1116cb;
+    border: 1px solid rgb(16, 238, 4);
+    color: white;
+    margin: 100px 0px 0px 20px;
 }
 
 .dados > h3 {
     font-size: 24px;
     margin-top: 0;
 }
-
 
 /********** inicio do formulario ************/
 .formulario {
@@ -46,6 +84,8 @@ body {
     flex-direction: row;
     justify-content: center;
     margin-bottom: 20px;
+    margin-top: 15px;
+    /*font-weight: lighter;*/
 }
 
 /*** div responsavel por guardar valor da aposta*/
@@ -125,10 +165,11 @@ body {
     width: 250px;
     padding: 12px;
     border-radius: 10px;
-    border: 5px solid white;
+    border: 2px solid white;
     color: white;
     font-weight: bold;
     font-size: 17px;
+    margin-bottom: 20px;
 }
 
 /* div corresponde a mostrar informação oculta*/
@@ -153,10 +194,12 @@ body {
     border-radius: 6px;
     padding-left: 1.5px;
     padding-right: 1.5px;
+
 }
 
 #passar_mouse:hover #mostrar {
     display: flex;
     margin-bottom: -50px;
     margin-left: -15px;
+    background-color: aliceblue;
 }
