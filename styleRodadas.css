@@ -1,0 +1,79 @@
+body, html {
+    height: 100%;
+}
+
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+.pai {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center; 
+}
+
+.barraSuperior {
+    width: 100%;
+    height: 50px;
+    background-color: #B8000C;
+    margin: 0% 0px 00px 0px;
+    padding: 10px 0px 20px 0px;
+}
+
+/*banner que informa qual a rodada atual*/
+#bannerDeRodada {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    background-color: #102837;
+    color: white;
+}
+
+/*div que guarda as bolas sorteadas*/
+ .bolasSorteadas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #102837;
+    color: white;
+    width: 100%;
+    height: auto;
+}
+
+.armazenaBolasSorteadas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    border: greenyellow solid 2px;
+    border-radius: 10px;
+    margin: 10px 0px 20px 0px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > .bs1, .container > .bs2, .container > .bs3, .container > .bs4, .container > .bs5, .container > .bs6, .container > .bs7, .container > .bs8, .container > .bs9, .container > .bs10, .container > .bs11, .container > .bs12, .container > .bs13, .container > .bs14, .container > .bs15, .container > .bs16, .container > .bs17, .container > .bs18, .container > .bs19, .container > .bs20 {
+    margin: 20px;
+    border-radius: 170px;
+    border: #dc1fa7 1px solid;
+    padding: 10px;
+    width: 26px;
+    background-color: aliceblue;
+}
+
+.bs1 > p, .bs2 > p, .bs3 > p, .bs4 > p, .bs5 > p, .bs6 > p, .bs7 > p, .bs8 > p, .bs9 > p, .bs10 > p, .bs11 > p, .bs12 > p, .bs13 > p, .bs14 > p, .bs15 > p, .bs16 > p, .bs17 > p, .bs18 > p, .bs19 > p, .bs20 > p {
+    font-weight: bolder;
+    color: red;
+    font-size: 20px;
+}
