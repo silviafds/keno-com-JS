@@ -1,12 +1,22 @@
-body, html {
-    height: 100%;
-}
-
 body {
     margin: 0%;
     padding: 0%;
+    background-color: #102837;
 }
 
+.pai {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+}
+
+.fundo {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+}
 
 .barraSuperior {
     width: 100%;
@@ -19,14 +29,14 @@ body {
 .filho1 {
     background-color: #102837;
     width: 40%;
-    height: 91.8%;
+    height: auto;
     float: left;
     margin-bottom: 0%
 }
 
 .filho2 {
     width: 60%;
-    height: 91.8%;
+    height: auto;
     float: right;
     margin-bottom: 0%;
     padding-right: 0%;
@@ -45,8 +55,8 @@ body {
     border-radius: 10px;
     border: 2px solid #B8000C;
     color: white;
-    margin: 100px 0px 0px 100px;
-    padding: 10px;
+    margin: 60px 0px 0px 100px;
+    padding: 25px;
 }
 
 /***** div que guarda o formulario *******/
@@ -62,7 +72,7 @@ body {
     background-color: #0c1116cb;
     border: 1px solid rgb(16, 238, 4);
     color: white;
-    margin: 100px 0px 0px 20px;
+    margin: 60px 0px 0px 20px;
 }
 
 .dados > h3 {
@@ -203,3 +213,123 @@ body {
     margin-left: -15px;
     background-color: aliceblue;
 }
+
+
+
+/***** area responsavel pelo jogo *****/
+
+
+
+/*banner que informa qual a rodada atual*/
+#bannerDeRodada {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    background-color: #102837;
+    color: white;
+    margin-top: 20px;
+    border: #B8000C solid 1px;
+    border-radius: 30px;
+}
+
+
+/*div que guarda as bolas sorteadas*/
+.bolasSorteadas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #102837;
+    color: white;
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.armazenaBolasSorteadas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    border: greenyellow solid 2px;
+    border-radius: 10px;
+    margin: 10px 0px 20px 0px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > .bs1, .container > .bs2, .container > .bs3, .container > .bs4, .container > .bs5, .container > .bs6, .container > .bs7, .container > .bs8, .container > .bs9, .container > .bs10, .container > .bs11, .container > .bs12, .container > .bs13, .container > .bs14, .container > .bs15, .container > .bs16, .container > .bs17, .container > .bs18, .container > .bs19, .container > .bs20 {
+    margin: 20px;
+    border-radius: 170px;
+    border: #dc1fa7 1px solid;
+    padding: 10px;
+    width: 26px;
+    background-color: aliceblue;
+}
+
+.bs1 > p, .bs2 > p, .bs3 > p, .bs4 > p, .bs5 > p, .bs6 > p, .bs7 > p, .bs8 > p, .bs9 > p, .bs10 > p, .bs11 > p, .bs12 > p, .bs13 > p, .bs14 > p, .bs15 > p, .bs16 > p, .bs17 > p, .bs18 > p, .bs19 > p, .bs20 > p {
+    font-weight: bolder;
+    color: red;
+    font-size: 20px;
+}
+
+.bolasAcertadas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #102837;
+    color: white;
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.armazenaBolasAcertadas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    border: rgb(253, 253, 4) solid 2px;
+    border-radius: 10px;
+    margin: 10px 0px 50px 0px;
+}
+
+.Resultado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    border: rgb(210, 123, 9) solid 1px;
+}
+
+/*chama a segunda rodada*/
+
+.btnNextR2 {
+    width: 250px;
+    margin-left: 50px;
+}
+
+#proxRodada {
+    background-color: darkgreen;
+    width: 250px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid white;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
