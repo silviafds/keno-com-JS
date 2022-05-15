@@ -1,7 +1,356 @@
 var verificacaoValorAposta = 0, verificacaoNumerosApostados = 0;
 var PegaValorApostado, PegaQtdNumerosApostados, vetorNumerosJogados = [];
 
+// INICIO NOVA CONFIG
+var vetorEx = [];
+var vetorNumerosApostados = [];
+function bolasEscolhidas(x) {
+    preencheBolasEscolhidas(x);
+}
+
+// função que preenche vetor com numeros escolhidos pelo jogador
+function preencheBolasEscolhidas(numeroEscolhidoJogador) {
+    var contadora = 0, posicaoVetor = vetorEx.length;
+
+    if(vetorEx.length > 0) {
+        for(var i = 0; i < posicaoVetor; i++) {
+            if(vetorEx[i] == numeroEscolhidoJogador) { //jogador quer mudar número escolhido
+                for(var j = i; j < posicaoVetor; j++) {
+                    vetorEx[j] = vetorEx[j+1];
+                }
+                posicaoVetor--;
+                contadora = 1;
+                mudaCordeFundo(numeroEscolhidoJogador, 1);
+            } 
+        }
+    }
+
+    //preenche com novo numero no vetor
+    if(contadora == 0){
+        vetorEx[posicaoVetor] = numeroEscolhidoJogador;
+        mudaCordeFundo(numeroEscolhidoJogador, 0); //num 0 = muda cor do fundo 
+    }
+    
+}
+
+// função que muda as cores de fundo ao clicar em algum número
+function mudaCordeFundo(numero, gatilho) {
+    switch (numero) {
+        case 1: 
+            var container = document.getElementById("bola1");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 2: 
+            var container = document.getElementById("bola2");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 3: 
+            var container = document.getElementById("bola3");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 4: 
+            var container = document.getElementById("bola4");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 5: 
+            var container = document.getElementById("bola5");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 6: 
+            var container = document.getElementById("bola6");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 7: 
+            var container = document.getElementById("bola7");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 8: 
+            var container = document.getElementById("bola8");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 9: 
+            var container = document.getElementById("bola9");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 10: 
+            var container = document.getElementById("bola10");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 11: 
+            var container = document.getElementById("bola11");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 12: 
+            var container = document.getElementById("bola12");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 13: 
+            var container = document.getElementById("bola13");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 14: 
+            var container = document.getElementById("bola14");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 15: 
+            var container = document.getElementById("bola15");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 16: 
+            var container = document.getElementById("bola16");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 17: 
+            var container = document.getElementById("bola17");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break; 
+        case 18: 
+            var container = document.getElementById("bola18");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 19: 
+            var container = document.getElementById("bola19");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 20: 
+            var container = document.getElementById("bola20");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 21: 
+            var container = document.getElementById("bola21");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 22: 
+            var container = document.getElementById("bola22");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 23: 
+            var container = document.getElementById("bola23");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 24: 
+            var container = document.getElementById("bola24");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 25: 
+            var container = document.getElementById("bola25");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 26: 
+            var container = document.getElementById("bola26");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 27: 
+            var container = document.getElementById("bola27");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 28: 
+            var container = document.getElementById("bola28");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 29: 
+            var container = document.getElementById("bola29");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 30: 
+            var container = document.getElementById("bola30");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 31: 
+            var container = document.getElementById("bola31");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 32: 
+            var container = document.getElementById("bola32");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 33: 
+            var container = document.getElementById("bola33");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 34: 
+            var container = document.getElementById("bola34");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 35: 
+            var container = document.getElementById("bola35");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 36: 
+            var container = document.getElementById("bola36");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 37: 
+            var container = document.getElementById("bola37");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 38: 
+            var container = document.getElementById("bola38");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 39: 
+            var container = document.getElementById("bola39");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 40: 
+            var container = document.getElementById("bola40");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 41: 
+            var container = document.getElementById("bola41");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 42: 
+            var container = document.getElementById("bola42");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 43: 
+            var container = document.getElementById("bola43");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 44: 
+            var container = document.getElementById("bola44");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 45: 
+            var container = document.getElementById("bola45");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 46: 
+            var container = document.getElementById("bola46");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 47: 
+            var container = document.getElementById("bola47");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 48: 
+            var container = document.getElementById("bola48");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 49: 
+            var container = document.getElementById("bola49");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        case 50: 
+            var container = document.getElementById("bola50");
+            if (gatilho == 0) { container.style.backgroundColor = '#2d7404';
+            } else { container.style.backgroundColor = '#b3cfe1';}
+            break;
+        default:
+            text = "Looking forward to the Weekend";
+    }
+}
+
+function ola() {
+    document.getElementById("debug").innerHTML = vetorEx;
+    document.getElementById("tamanhoVetor").innerHTML = vetorEx.length;
+
+    var resposta = validaNumerosEscolhidos();
+    document.getElementById("tamVetoSemEspaco").innerHTML = resposta;
+}
+
+// função descobre quantos numeros o jogador escolheu
+// minimo = 1 numero e maximo = 12 numeros
+function validaNumerosEscolhidos() {
+var contadora = 0;
+
+    //procura espaços em brancos ou undefined
+    for(var i = 0; i < vetorEx.length; i++) {
+        if(vetorEx[i] == "" || vetorEx[i] == undefined) {
+            contadora++;
+        } else {
+            vetorNumerosApostados[i] = vetorEx[i];
+        }
+
+    }
+
+    var totalNumerosApostados = vetorEx.length - contadora;
+    return totalNumerosApostados;
+}
+
+function validarDados() {
+    var recebeValorApostadoJ = document.getElementById("valorAposta").value;
+
+
+    if(recebeValorApostadoJ >= 1 && validaNumerosEscolhidos() >= 1 && validaNumerosEscolhidos() <= 12) {
+        alert("Aposta lida com sucesso! \nVocê apostará $:" + recebeValorApostadoJ + "." + "\nSua aposta tem " + validaNumerosEscolhidos() + " números, eles são " + ordenaNumeros(vetorNumerosApostados) + "\nClique em 'OK' para iniciar o jogo");
+    } else {
+        alert("Informe os dados corretos.");
+    }
+}
+
+// funcao que ordena numeros
+function ordenaNumeros(vetorNumerosDesordenados_) {
+    //var vetorOrdenado = [];
+
+    /*for(var i = 0; i < vetorNumerosDesordenados_.length; i++) { //converte string para int
+        vetorOrdenado[i] = parseInt(vetorNumerosDesordenados_[i]);
+    }*/
+
+    vetorNumerosDesordenados_.sort(function (a, b) { //números ficam em ordem crescente
+	    return (a > b) ? 1 : ((b > a) ? -1 : 0);
+    });
+
+    return vetorNumerosDesordenados_;
+}
+
+
+// FINAL NOVA CONFIG
+
+
+
 // função valida o valor apostado pelo jogador
+/*
 function validaValorApostado() {
     var valorApostado = document.getElementById("valorApostar").value;
     
@@ -55,7 +404,8 @@ function validaNumApostados() {
 
 /* Função na qual coloca os números apostados em ordem crescente 
     @vetorOrdenado vetor com os números em ordem crescente
-*/
+*/  
+/*              FUNÇÃO COPIADA
 function ordenaNumeros(vetorNumerosDesordenados_) {
     var vetorOrdenado = [];
 
@@ -71,11 +421,13 @@ function ordenaNumeros(vetorNumerosDesordenados_) {
 }
 
 /* Função busca elemento repetido no vetor */
+/*
 function buscaNumerosRepetidos(vetorOrdenado_) {
     return (new Set(vetorOrdenado_)).size !== vetorOrdenado_.length;
 }
 
 /* Função valida quantidade de numeros */
+/*
 function validaQuantidadeNumerosApostado(vetorNumerosOrdenados_) {
     if (vetorNumerosOrdenados_.length > 15 || vetorNumerosOrdenados_.length < 1) {
         return 1;
@@ -86,6 +438,7 @@ function validaQuantidadeNumerosApostado(vetorNumerosOrdenados_) {
 
 /* função que mostra o valor real da aposta do jogador, apenas se ele digitou
 os valores corretos, caso contrário, o jogo não continua*/ 
+/*
 function validaDadosFornecidos() {
     var resultadoVerificacao = verificacaoValorAposta + verificacaoNumerosApostados;
 
@@ -99,6 +452,7 @@ function validaDadosFornecidos() {
 }
 
 /* função que calcula o valor que sera apostado em cada rodada*/
+/*
 function valorApostaPorRodada() {
     var valorPorRodada = PegaValorApostado/3;
     return valorPorRodada.toFixed(2);
@@ -117,6 +471,7 @@ function valorApostaPorRodada() {
 
 
 //função que chama a proxima rodada, inicia na segunda rodada
+/*
 function RodadaDois() {
     preencheBolasSorteadasRodadaDois();
 }
@@ -336,5 +691,4 @@ function preencheBolasAcertadasRodadaTres(listaNumerosSorteados) {
     document.getElementById("a14-r3").innerHTML = numerosAcertados[14];
     document.getElementById("a15-r3").innerHTML = numerosAcertados[15];
 }
-
-
+*/

@@ -7,15 +7,9 @@ body {
 .pai {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-content: center;
-}
-
-.fundo {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-content: center;
+    justify-content: center;
+    align-items: center;
+   /* width: 100vw;*/
 }
 
 .barraSuperior {
@@ -26,22 +20,100 @@ body {
     padding: 10px 0px 20px 0px;
 }
 
+.boasVindas {
+    width: 50%;
+    background-color: rgb(188, 205, 200);
+    border-radius: 15px;
+    margin: 15px 0px 10px 0px;
+    text-align: center;
+}
+
+.div-mae {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+    margin-top: 20px;
+}
+
 .filho1 {
-    background-color: #102837;
-    width: 40%;
+    width: 65%;
     height: auto;
-    float: left;
-    margin-bottom: 0%
+    margin-bottom: 0%;
+    padding-right: 0%;
+    background-color: #25577d;
+    padding: 5px;
 }
 
 .filho2 {
-    width: 60%;
+    width: 35%;
     height: auto;
     float: right;
     margin-bottom: 0%;
     padding-right: 0%;
     background-color: #0c151c;
 }
+
+.regras-bolas {
+    background-color: azure;
+    border-radius: 15px;
+    float: left;
+    /*padding: 3px 9px 3px 9px;*/
+    margin: 6px 0px 6px 0px;
+}
+
+.bolasParaEscolher {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+.linha-um {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    
+}
+
+.linha-um > .be1, .linha-um > .be2, .linha-um > .be3, .linha-um > .be4, .linha-um > .be5, .linha-um > .be6, .linha-um > .be7, .linha-um > .be8, .linha-um > .be9, .linha-um > .be10, .linha-um > .be11, .linha-um > .be12, .linha-um > .be13, .linha-um > .be14, .linha-um > .be15, .linha-um > .be16, .linha-um > .be17, .linha-um > .be18, .linha-um > .be19, .linha-um > .be20, .linha-um > .be21, .linha-um > .be22, .linha-um > .be23, .linha-um > .be24, .linha-um > .be25, .linha-um > .be26, .linha-um > .be27, .linha-um > .be28, .linha-um > .be29, .linha-um > .be30, .linha-um > .be31, .linha-um > .be32, .linha-um > .be33, .linha-um > .be34, .linha-um > .be35, .linha-um > .be36, .linha-um > .be37, .linha-um > .be38, .linha-um > .be39, .linha-um > .be40, .linha-um > .be41, .linha-um > .be42, .linha-um > .be43, .linha-um > .be44, .linha-um > .be45, .linha-um > .be46, .linha-um > .be47, .linha-um > .be48, .linha-um > .be49, .linha-um > .be50 {
+    margin: 15px;
+    border-radius: 100px;
+    border: #b00e82 2px solid;
+    padding: 10px;
+    width: 26px;
+    /*background-color: rgb(171, 221, 224);*/
+    background-color: #b3cfe1;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.linha-um > .be1:hover, .linha-um > .be2:hover, .linha-um > .be3:hover, .linha-um > .be4:hover, .linha-um > .be5:hover, .linha-um > .be6:hover, .linha-um > .be7:hover, .linha-um > .be8:hover, .linha-um > .be9:hover, .linha-um > .be10:hover, .linha-um > .be11:hover, .linha-um > .be12:hover, .linha-um > .be13:hover, .linha-um > .be14:hover, .linha-um > .be15:hover, .linha-um > .be16:hover, .linha-um > .be17:hover, .linha-um > .be18:hover, .linha-um > .be19:hover, .linha-um > .be20:hover, .linha-um > .be21:hover, .linha-um > .be22:hover, .linha-um > .be23:hover, .linha-um > .be24:hover, .linha-um > .be25:hover, .linha-um > .be26:hover, .linha-um > .be27:hover, .linha-um > .be28:hover, .linha-um > .be29:hover, .linha-um > .be30:hover, .linha-um > .be31:hover, .linha-um > .be32:hover, .linha-um > .be33:hover, .linha-um > .be34:hover, .linha-um > .be35:hover, .linha-um > .be36:hover, .linha-um > .be37:hover, .linha-um > .be38:hover, .linha-um > .be39:hover, .linha-um > .be40:hover, .linha-um > .be41:hover, .linha-um > .be42:hover, .linha-um > .be43:hover, .linha-um > .be44:hover, .linha-um > .be45:hover, .linha-um > .be46:hover, .linha-um > .be47:hover, .linha-um > .be48:hover, .linha-um > .be49:hover, .linha-um > .be50:hover {
+    background-color: rgb(210, 207, 52);
+    /*background-color: #2d7404;*/
+}
+
+/* div responsavel sobre valor de aposta*/
+.valorDeAposta {
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content:flex-start;
+    align-items:flex-start
+}
+
+.valorAposta {
+    padding: 15px;
+    border-radius: 10px;
+    border: solid 1px rgb(15, 195, 18);
+    width: 200px;
+}
+
 
 /**** div com as regras do jogo ****/
 .regras {
@@ -50,12 +122,12 @@ body {
     flex-direction: column;
     text-align: center;
     align-content: center;
-    width: 920px;
+    
     height: auto;
     border-radius: 10px;
     border: 2px solid #B8000C;
     color: white;
-    margin: 60px 0px 0px 100px;
+    margin: 20px 15px 20px 15px;
     padding: 25px;
 }
 
