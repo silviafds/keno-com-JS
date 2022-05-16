@@ -176,6 +176,10 @@ body {
     margin-bottom: 10px;
 }
 
+.botao:hover {
+    background-color: #5acd0e;
+}
+
 
 
 /***** area responsavel pelo jogo *****/
@@ -282,13 +286,17 @@ body {
     border: #f47d06 2px solid;
 }
 
+.banner-resultado > div {
+    font-weight: bolder;
+}
+
 .dinheiroApostado {
     width: 800px;
     background-color: rgb(187, 240, 112);
     border-radius: 7px;
     border: #f47d06 2px solid;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
@@ -300,19 +308,19 @@ body {
     border-radius: 7px;
     border: #f47d06 2px solid;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
 }
 
-.valorRcecebidoRodada {
+.valorRecebidoRodada {
     width: 800px;
     background-color: rgb(187, 240, 112);
     border-radius: 7px;
     border: #f47d06 2px solid;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
@@ -324,7 +332,7 @@ body {
     border-radius: 7px;
     border: #f47d06 2px solid;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
@@ -336,8 +344,24 @@ body {
     border-radius: 7px;
     border: #f47d06 2px solid;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
+}
+
+/** botao resultado **/
+.botaoResultado {
+    background-color: darkgreen;
+    padding: 15px;
+    border: white 1px solid;
+    border-radius: 8px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: bolder;
+    color: white;
+}
+
+.botaoResultado:hover {
+    background-color: #5acd0e;
 }

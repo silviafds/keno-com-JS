@@ -1,10 +1,11 @@
-var verificacaoValorAposta = 0, verificacaoNumerosApostados = 0;
+/*var verificacaoValorAposta = 0, verificacaoNumerosApostados = 0;
 var PegaValorApostado, PegaQtdNumerosApostados, vetorNumerosJogados = [];
-
+*/
 // INICIO NOVA CONFIG
 var vetorEx = [];
 var vetorNumerosApostados = [];
 var tamanhoNumerosAcertados;
+
 
 function bolasEscolhidas(x) {
     preencheBolasEscolhidas(x);
@@ -336,8 +337,10 @@ function QuatidadeNumerosSelecionados(quantidadeNumSelec, gatilho) {
 
 // função apos clicar no botao de enviar os dados
 // faz a validação dos dados inseridos
+
+var recebeValorApostadoJ = 0;
 function validarDados() {
-    var recebeValorApostadoJ = document.getElementById("valorAposta").value;
+    recebeValorApostadoJ = document.getElementById("valorAposta").value;
     aposta = recebeValorApostadoJ;
     if(recebeValorApostadoJ >= 1 && validaNumerosEscolhidos() >= 1 && validaNumerosEscolhidos() <= 12) {
         alert("Aposta lida com sucesso! \nVocê apostará $:" + recebeValorApostadoJ + "." + "\nSua aposta tem " + validaNumerosEscolhidos() + " números, eles são " + ordenaNumeros(vetorNumerosApostados) + "\nClique em 'OK' para iniciar o jogo");
@@ -417,25 +420,29 @@ function preencheBolasSorteadaRodadaUmS(listaNumerosSorteados) {
     preencheBolasAcertadasRodadaUm(listaNumerosSorteados);
 }
 
+
+var vetorteste = [];
 // função compara bolas para descobrir acertos do jogador
 function comparaBolas(listaNumerosSorteados) {
     var numerosAcertados = [];
 
-    //numerosAcertados.length = 0;
     var x = 0;
     for(var i=0; i<20; i++){
-        for(var j=0; j<vetorNumerosApostados.length; j++){
-            if(listaNumerosSorteados[i] == vetorNumerosApostados[j]){
+        for(var j=0; j<vetorNumerosApostados.length; j++) {
+            if(listaNumerosSorteados[i] == vetorNumerosApostados[j]) {
                 numerosAcertados[x] = vetorNumerosApostados[j];
                 x++;
             }
         }
     }
+
     tamanhoNumerosAcertados = numerosAcertados.length;
-    // preenche valores vazios com 'x'
-    for(var j=0; j<=12; j++){
+
+    for(var j=0; j<=12; j++){ // preenche valores vazios com 'x'
         if(numerosAcertados[j] == undefined){
             numerosAcertados[j] = "x";
+        } else {
+            vetorteste[j] = numerosAcertados[j];
         }
     }
     return numerosAcertados;
@@ -460,6 +467,20 @@ function preencheBolasAcertadasRodadaUm(listaNumerosSorteados) {
     document.getElementById("a12-r1").innerHTML = numerosAcertados[12];
 
     calculaValorRodada();
+
+   
+}
+
+//funcao retira o "x" de dentro do vetor
+function eliminaX() {
+    var novoVetor = [];
+
+    for(var i = 0; numerosAcertados.length; i++) {
+        if(numerosAcertados[i] != 'x') {
+            novoVetor[i] = numerosAcertados[i];
+        }
+    }
+    return novoVetor;
 }
 
 
@@ -486,10 +507,6 @@ function matrizPontos() {
                 [0, 0, 0, 0.5, 0.5, 3, 4, 5, 20, 80, 240, 500, 3000, 6000] ];
 
     var valorMatriz = matriz[y][tamanhoNumerosAcertados];
-
-    document.getElementById("palavrasResultado").innerHTML = tamanhoNumerosAcertados;
-    document.getElementById("mm").innerHTML = y;
-    document.getElementById("posicaoLinhaCOluna").innerHTML = valorMatriz;
     
     return valorMatriz;
 }
@@ -501,11 +518,10 @@ function calculaValorRodada() {
     var x = matrizPontos();
     
     var valorResultado = x * recebeValorApostado;
-
+    
     calculaValorTotal(valorResultado);
 
-    document.getElementById("vlrGanho").innerHTML = valorResultado;
-
+    return valorResultado;
 }
 
 //calcula quanto a pessoa ganhou/perdeu no final do jogo
@@ -513,16 +529,55 @@ function calculaValorTotal(valor) {
     var xy = document.getElementById("valorAposta").value;
     var valorGanhoTotal = 0;
 
-    valorGanhoTotal = (xy * 1) + valor;
+    if(valor == 0) {
+        valorGanhoTotal = 0;
+    } else {
+        valorGanhoTotal = (xy * 1) + valor;
+    }
 
-    interfaceResultado();
+    return valorGanhoTotal;
 }
 
-function interfaceResultado() {
-    var dinheiro = document.getElementById("valorAposta").value;
-    document.getElementById("tt").innerHTML = 4;
-}  
+function preencheInterface() {
+    //preenche o valor apostado
+    document.getElementById("retornoDinheiro").innerHTML = recebeValorApostadoJ;
+
+    //preenche com os numeros apostados
+    document.getElementById("numApost").innerHTML = vetorNumerosApostados;
+    
+
+    //preenche o valor ganho na rodada
+    var x = calculaValorRodada();
+    if (x < 1) {
+        document.getElementById("valorRod").innerHTML = " Infelizmente você não ganhou nada";
+        document.getElementById("valorRod").style.color= "red";
+    } else {
+        document.getElementById("valorRod").innerHTML = calculaValorRodada();
+        acertoBall
+        document.getElementById("valorRod").style.color= "green";
+    }
+    
+    
+    //preenche o valor total ganho
+    var w = document.getElementById("RecebeuFinal").innerHTML = calculaValorTotal(calculaValorRodada());
+    if(w == 0) {
+        document.getElementById("RecebeuFinal").innerHTML = calculaValorTotal(calculaValorRodada());
+        document.getElementById("RecebeuFinal").style.color= "red";
+    } else {
+        document.getElementById("RecebeuFinal").innerHTML = calculaValorTotal(calculaValorRodada());
+        document.getElementById("RecebeuFinal").style.color= "green";
+    }
+    
 
 
+    //preenche bolas que acertou
+    if(vetorteste.length == 0) {
+        document.getElementById("acertoBall").innerHTML = " Infelizmente você não acertou nenhum número";
+        document.getElementById("acertoBall").style.color= "red";
+    } else {
+        document.getElementById("acertoBall").innerHTML = vetorteste;
 
+    }
+    
+}
 
