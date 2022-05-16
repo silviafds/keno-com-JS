@@ -515,15 +515,13 @@ function calculaValorTotal(valor) {
 
     valorGanhoTotal = (xy * 1) + valor;
 
-    if(valor >= 1) {
-        document.getElementById("R").innerHTML = valorGanhoTotal;
-    } else {
-        document.getElementById("R").innerHTML = 0;
-    }
-
+    interfaceResultado();
 }
 
-    
+function interfaceResultado() {
+    var dinheiro = document.getElementById("valorAposta").value;
+    document.getElementById("tt").innerHTML = 4;
+}  
 
 
 
