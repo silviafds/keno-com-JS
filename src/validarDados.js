@@ -4,15 +4,18 @@ var PegaValorApostado, PegaQtdNumerosApostados, vetorNumerosJogados = [];
 // INICIO NOVA CONFIG
 var vetorEx = [];
 var vetorNumerosApostados = [];
+var tamanhoNumerosAcertados;
+
 function bolasEscolhidas(x) {
     preencheBolasEscolhidas(x);
 }
 
+var quantidadeNumSelecionados = 0;
 // função que preenche vetor com numeros escolhidos pelo jogador
 function preencheBolasEscolhidas(numeroEscolhidoJogador) {
     var contadora = 0, posicaoVetor = vetorEx.length;
 
-    if(vetorEx.length > 0) {
+    if(vetorEx.length >= 1) {
         for(var i = 0; i < posicaoVetor; i++) {
             if(vetorEx[i] == numeroEscolhidoJogador) { //jogador quer mudar número escolhido
                 for(var j = i; j < posicaoVetor; j++) {
@@ -21,6 +24,8 @@ function preencheBolasEscolhidas(numeroEscolhidoJogador) {
                 posicaoVetor--;
                 contadora = 1;
                 mudaCordeFundo(numeroEscolhidoJogador, 1);
+                quantidadeNumSelecionados--;
+                QuatidadeNumerosSelecionados(quantidadeNumSelecionados, 2);
             } 
         }
     }
@@ -29,6 +34,8 @@ function preencheBolasEscolhidas(numeroEscolhidoJogador) {
     if(contadora == 0){
         vetorEx[posicaoVetor] = numeroEscolhidoJogador;
         mudaCordeFundo(numeroEscolhidoJogador, 0); //num 0 = muda cor do fundo 
+        quantidadeNumSelecionados++;
+        QuatidadeNumerosSelecionados(quantidadeNumSelecionados, 1);
     }
     
 }
@@ -291,14 +298,6 @@ function mudaCordeFundo(numero, gatilho) {
     }
 }
 
-function ola() {
-    document.getElementById("debug").innerHTML = vetorEx;
-    document.getElementById("tamanhoVetor").innerHTML = vetorEx.length;
-
-    var resposta = validaNumerosEscolhidos();
-    document.getElementById("tamVetoSemEspaco").innerHTML = resposta;
-}
-
 // função descobre quantos numeros o jogador escolheu
 // minimo = 1 numero e maximo = 12 numeros
 function validaNumerosEscolhidos() {
@@ -311,16 +310,35 @@ var contadora = 0;
         } else {
             vetorNumerosApostados[i] = vetorEx[i];
         }
-
     }
 
     var totalNumerosApostados = vetorEx.length - contadora;
     return totalNumerosApostados;
 }
 
+// funcao que mostra a quantidade de numeros que o jogador 
+// esta selecionando, direto na interface
+function QuatidadeNumerosSelecionados(quantidadeNumSelec, gatilho) {
+    
+    if(gatilho == 0) { //iniciou o jogo
+        document.getElementById("QtdBolasEsc").innerHTML = 0;
+    } else {
+        document.getElementById("QtdBolasEsc").innerHTML = quantidadeNumSelec;
+    }
+
+    if(quantidadeNumSelec == 12) {
+        document.getElementById("MsgBolasMax").style.display= 'flex';    
+    } else {
+        document.getElementById("MsgBolasMax").style.display= 'none';
+    }
+    
+}
+
+// função apos clicar no botao de enviar os dados
+// faz a validação dos dados inseridos
 function validarDados() {
     var recebeValorApostadoJ = document.getElementById("valorAposta").value;
-
+    aposta = recebeValorApostadoJ;
     if(recebeValorApostadoJ >= 1 && validaNumerosEscolhidos() >= 1 && validaNumerosEscolhidos() <= 12) {
         alert("Aposta lida com sucesso! \nVocê apostará $:" + recebeValorApostadoJ + "." + "\nSua aposta tem " + validaNumerosEscolhidos() + " números, eles são " + ordenaNumeros(vetorNumerosApostados) + "\nClique em 'OK' para iniciar o jogo");
         preencheBolasSorteadaRodadaUm();
@@ -331,11 +349,6 @@ function validarDados() {
 
 // funcao que ordena numeros
 function ordenaNumeros(vetorNumerosDesordenados_) {
-    //var vetorOrdenado = [];
-
-    /*for(var i = 0; i < vetorNumerosDesordenados_.length; i++) { //converte string para int
-        vetorOrdenado[i] = parseInt(vetorNumerosDesordenados_[i]);
-    }*/
 
     vetorNumerosDesordenados_.sort(function (a, b) { //números ficam em ordem crescente
 	    return (a > b) ? 1 : ((b > a) ? -1 : 0);
@@ -346,20 +359,6 @@ function ordenaNumeros(vetorNumerosDesordenados_) {
 
 /*======Essa parte corresponde ao inicio do jogo=========*/ 
 
-
-
-
-//função que chama a proxima rodada, inicia na segunda rodada
-/*
-function RodadaDois() {
-    preencheBolasSorteadasRodadaDois();
-}*/
-
-//função que chama a proxima rodada, inicia a terceira rodada
-/*
-function RodadaTres() {
-    preencheBolasSorteadasRodadaTres();
-}*/
 
 // função que sorteia numeros
 function sorteiaBolas() {
@@ -402,6 +401,7 @@ function preencheBolasSorteadaRodadaUm() {
     document.getElementById("n10").innerHTML = listaNumerosSorteados[9];
     setInterval(preencheBolasSorteadaRodadaUmS(listaNumerosSorteados), 1000);
 }
+
 // função que preenche as bolas da primeira rodada
 function preencheBolasSorteadaRodadaUmS(listaNumerosSorteados) {
     document.getElementById("n11").innerHTML = listaNumerosSorteados[10];
@@ -431,8 +431,9 @@ function comparaBolas(listaNumerosSorteados) {
             }
         }
     }
+    tamanhoNumerosAcertados = numerosAcertados.length;
     // preenche valores vazios com 'x'
-    for(var j=0; j<=15; j++){
+    for(var j=0; j<=12; j++){
         if(numerosAcertados[j] == undefined){
             numerosAcertados[j] = "x";
         }
@@ -457,123 +458,73 @@ function preencheBolasAcertadasRodadaUm(listaNumerosSorteados) {
     document.getElementById("a10-r1").innerHTML = numerosAcertados[10];
     document.getElementById("a11-r1").innerHTML = numerosAcertados[11];
     document.getElementById("a12-r1").innerHTML = numerosAcertados[12];
-    document.getElementById("a13-r1").innerHTML = numerosAcertados[13];
-    document.getElementById("a14-r1").innerHTML = numerosAcertados[14];
-    document.getElementById("a15-r1").innerHTML = numerosAcertados[15];
+
+    calculaValorRodada();
 }
 
 
+/* parte referencia ao calculo e resultado do jogo*/
 
+// linha matriz = qtd numeros jogados
+// coluna matriz = qtd numeros sorteados que foram sorteados
+function matrizPontos() {
+    var y = validaNumerosEscolhidos();
+    y = y - 1;
 
+    var matriz = [  [0, 3],
+                [0, 1, 9],
+                [0, 1, 2, 16],
+                [0, 0.5, 2, 6, 12],
+                [0, 0.5, 1, 3, 15, 50],
+                [0, 0.5, 1, 2, 3, 30, 75],
+                [0, 0.5, 0.5, 1, 6, 12, 36, 100],
+                [0, 0.5, 0.5, 1, 3, 6, 19, 90, 720],
+                [0, 0.5, 0.5, 1, 2, 4, 8,  20, 80, 1.200],
+                [0, 0, 0.5, 1, 2, 3, 5, 10, 30, 600, 1800],
+                [0, 0, 0.5, 1, 1, 2, 6, 15, 25, 180, 1000, 3000],
+                [0, 0, 0, 0.5, 1, 2, 4, 24, 72, 250, 500, 2000, 4000],
+                [0, 0, 0, 0.5, 0.5, 3, 4, 5, 20, 80, 240, 500, 3000, 6000] ];
 
-/*
-//função que preenche as bolas da 2º rodada
-function preencheBolasSorteadasRodadaDois() {
-    var listaNumerosSorteados = [];
-    listaNumerosSorteados = sorteiaBolas();
-    listaNumerosSorteados = ordenaNumeros(listaNumerosSorteados);
+    var valorMatriz = matriz[y][tamanhoNumerosAcertados];
 
-    document.getElementById("n1-r2").innerHTML = listaNumerosSorteados[0];
-    document.getElementById("n2-r2").innerHTML = listaNumerosSorteados[1];
-    document.getElementById("n3-r2").innerHTML = listaNumerosSorteados[2];
-    document.getElementById("n4-r2").innerHTML = listaNumerosSorteados[3];
-    document.getElementById("n5-r2").innerHTML = listaNumerosSorteados[4];
-    document.getElementById("n6-r2").innerHTML = listaNumerosSorteados[5];
-    document.getElementById("n7-r2").innerHTML = listaNumerosSorteados[6];
-    document.getElementById("n8-r2").innerHTML = listaNumerosSorteados[7];
-    document.getElementById("n9-r2").innerHTML = listaNumerosSorteados[8];
-    document.getElementById("n10-r2").innerHTML = listaNumerosSorteados[9];
-    setInterval(preencheBolasSorteadasRodadaDoisS(listaNumerosSorteados), 1000);
+    document.getElementById("palavrasResultado").innerHTML = tamanhoNumerosAcertados;
+    document.getElementById("mm").innerHTML = y;
+    document.getElementById("posicaoLinhaCOluna").innerHTML = valorMatriz;
+    
+    return valorMatriz;
 }
 
-function preencheBolasSorteadasRodadaDoisS(listaNumerosSorteados) {
-    document.getElementById("n11-r2").innerHTML = listaNumerosSorteados[10];
-    document.getElementById("n12-r2").innerHTML = listaNumerosSorteados[11];
-    document.getElementById("n13-r2").innerHTML = listaNumerosSorteados[12];
-    document.getElementById("n14-r2").innerHTML = listaNumerosSorteados[13];
-    document.getElementById("n15-r2").innerHTML = listaNumerosSorteados[14];
-    document.getElementById("n16-r2").innerHTML = listaNumerosSorteados[15];
-    document.getElementById("n17-r2").innerHTML = listaNumerosSorteados[16];
-    document.getElementById("n18-r2").innerHTML = listaNumerosSorteados[17];
-    document.getElementById("n19-r2").innerHTML = listaNumerosSorteados[18];
-    document.getElementById("n20-r2").innerHTML = listaNumerosSorteados[19];
-    preencheBolasAcertadasRodadaDois(listaNumerosSorteados);
+// funcao calcula o valor que ganhou ou perdeu na rodada
+function calculaValorRodada() {
+    var recebeValorApostado = document.getElementById("valorAposta").value;
+    
+    var x = matrizPontos();
+    
+    var valorResultado = x * recebeValorApostado;
+
+    calculaValorTotal(valorResultado);
+
+    document.getElementById("vlrGanho").innerHTML = valorResultado;
+
 }
 
-//função que preenche as bolas acertadas na 2º rodada
-function preencheBolasAcertadasRodadaDois(listaNumerosSorteados) {
-    var numerosAcertados = [];
-    numerosAcertados = comparaBolas(listaNumerosSorteados);
-    document.getElementById("a1-r2").innerHTML = numerosAcertados[0];
-    document.getElementById("a2-r2").innerHTML = numerosAcertados[1];
-    document.getElementById("a3-r2").innerHTML = numerosAcertados[2];
-    document.getElementById("a4-r2").innerHTML = numerosAcertados[3];
-    document.getElementById("a5-r2").innerHTML = numerosAcertados[4];
-    document.getElementById("a6-r2").innerHTML = numerosAcertados[5];
-    document.getElementById("a7-r2").innerHTML = numerosAcertados[6];
-    document.getElementById("a8-r2").innerHTML = numerosAcertados[7];
-    document.getElementById("a8-r2").innerHTML = numerosAcertados[8];
-    document.getElementById("a9-r2").innerHTML = numerosAcertados[9];
-    document.getElementById("a10-r2").innerHTML = numerosAcertados[10];
-    document.getElementById("a11-r2").innerHTML = numerosAcertados[11];
-    document.getElementById("a12-r2").innerHTML = numerosAcertados[12];
-    document.getElementById("a13-r2").innerHTML = numerosAcertados[13];
-    document.getElementById("a14-r2").innerHTML = numerosAcertados[14];
-    document.getElementById("a15-r2").innerHTML = numerosAcertados[15];
+//calcula quanto a pessoa ganhou/perdeu no final do jogo
+function calculaValorTotal(valor) {
+    var xy = document.getElementById("valorAposta").value;
+    var valorGanhoTotal = 0;
+
+    valorGanhoTotal = (xy * 1) + valor;
+
+    if(valor >= 1) {
+        document.getElementById("R").innerHTML = valorGanhoTotal;
+    } else {
+        document.getElementById("R").innerHTML = 0;
+    }
+
 }
 
-//função que preenche as bolas da 3º rodada
-function preencheBolasSorteadasRodadaTres() {
-    var listaNumerosSorteados = [];
-    listaNumerosSorteados = sorteiaBolas();
-    listaNumerosSorteados = ordenaNumeros(listaNumerosSorteados);
+    
 
-    document.getElementById("n1-r3").innerHTML = listaNumerosSorteados[0];
-    document.getElementById("n2-r3").innerHTML = listaNumerosSorteados[1];
-    document.getElementById("n3-r3").innerHTML = listaNumerosSorteados[2];
-    document.getElementById("n4-r3").innerHTML = listaNumerosSorteados[3];
-    document.getElementById("n5-r3").innerHTML = listaNumerosSorteados[4];
-    document.getElementById("n6-r3").innerHTML = listaNumerosSorteados[5];
-    document.getElementById("n7-r3").innerHTML = listaNumerosSorteados[6];
-    document.getElementById("n8-r3").innerHTML = listaNumerosSorteados[7];
-    document.getElementById("n9-r3").innerHTML = listaNumerosSorteados[8];
-    document.getElementById("n10-r3").innerHTML = listaNumerosSorteados[9];
-    setInterval(preencheBolasSorteadasRodadaTresS(listaNumerosSorteados), 1000);
-}
 
-function preencheBolasSorteadasRodadaTresS(listaNumerosSorteados) {
-    document.getElementById("n11-r3").innerHTML = listaNumerosSorteados[10];
-    document.getElementById("n12-r3").innerHTML = listaNumerosSorteados[11];
-    document.getElementById("n13-r3").innerHTML = listaNumerosSorteados[12];
-    document.getElementById("n14-r3").innerHTML = listaNumerosSorteados[13];
-    document.getElementById("n15-r3").innerHTML = listaNumerosSorteados[14];
-    document.getElementById("n16-r3").innerHTML = listaNumerosSorteados[15];
-    document.getElementById("n17-r3").innerHTML = listaNumerosSorteados[16];
-    document.getElementById("n18-r3").innerHTML = listaNumerosSorteados[17];
-    document.getElementById("n19-r3").innerHTML = listaNumerosSorteados[18];
-    document.getElementById("n20-r3").innerHTML = listaNumerosSorteados[19];
-    preencheBolasAcertadasRodadaTres(listaNumerosSorteados);
-}
 
-//função que preenche as bolas acertadas na 3º rodada
-function preencheBolasAcertadasRodadaTres(listaNumerosSorteados) {
-    var numerosAcertados = [];
-    numerosAcertados = comparaBolas(listaNumerosSorteados);
-    document.getElementById("a1-r3").innerHTML = numerosAcertados[0];
-    document.getElementById("a2-r3").innerHTML = numerosAcertados[1];
-    document.getElementById("a3-r3").innerHTML = numerosAcertados[2];
-    document.getElementById("a4-r3").innerHTML = numerosAcertados[3];
-    document.getElementById("a5-r3").innerHTML = numerosAcertados[4];
-    document.getElementById("a6-r3").innerHTML = numerosAcertados[5];
-    document.getElementById("a7-r3").innerHTML = numerosAcertados[6];
-    document.getElementById("a8-r3").innerHTML = numerosAcertados[7];
-    document.getElementById("a8-r3").innerHTML = numerosAcertados[8];
-    document.getElementById("a9-r3").innerHTML = numerosAcertados[9];
-    document.getElementById("a10-r3").innerHTML = numerosAcertados[10];
-    document.getElementById("a11-r3").innerHTML = numerosAcertados[11];
-    document.getElementById("a12-r3").innerHTML = numerosAcertados[12];
-    document.getElementById("a13-r3").innerHTML = numerosAcertados[13];
-    document.getElementById("a14-r3").innerHTML = numerosAcertados[14];
-    document.getElementById("a15-r3").innerHTML = numerosAcertados[15];
-}
-*/
+

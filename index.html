@@ -9,7 +9,7 @@
     <script type="text/javascript" src="./src/validarDados.js"></script>
 </head>
 
-<body class="pai">
+<body class="pai" onload="QuatidadeNumerosSelecionados(0, 0)">
 
     <div class="barraSuperior">
         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sapiente</h2>
@@ -111,9 +111,16 @@
                 <h1>Regras</h1>
                 <p>* O valor mínimo de aposta é R$: 1,00 (um real).</p>
                 <p>* Escolher no mínimo 1 número e no máximo 12 números entre 1 e 50, sem que haja repetição.</p>
-                
             </div>
-            
+
+            <div class="avisoQtdBolas">
+                <div class="titulo"><h4>Quantidade Bolas Escolhidas</h4></div>
+                <p class="QtdBolas" id="QtdBolasEsc"></p>
+            </div>
+
+            <div class="MsgBolas" id="MsgBolasMax">
+                <p class="MsgBolasMax">Você escolheu o número máximo de bolas.</p>
+            </div>
         </div>
 
     </div>
@@ -180,9 +187,9 @@
                 <div class="bs10"> <p id="a10-r1"></p></div>
                 <div class="bs11"> <p id="a11-r1"></p> </div>
                 <div class="bs12"> <p id="a12-r1"></p> </div>
-                <div class="bs13"> <p id="a13-r1"></p> </div>
+    <!--            <div class="bs13"> <p id="a13-r1"></p> </div>
                 <div class="bs14"> <p id="a14-r1"></p> </div>
-                <div class="bs15"> <p id="a15-r1"></p></div>
+                <div class="bs15"> <p id="a15-r1"></p></div>-->
             </div>
         </div>
        
@@ -190,160 +197,32 @@
 
 
     <div class="Resultado">
+
         <div class="banner-resultado">
             <h2>Resultado</h2>
         </div>
         
         <div class="Result">
             <h1>estilizando</h1>    
+
+            <p>qtd num acertados</p>
             <p id="palavrasResultado"></p>
+
+            <p>linhas -1</p>
+            <p id="mm"></p>
+
+            <p>linha e coluna</p>
+            <p id="posicaoLinhaCOluna"></p>
+
+            <p>valor ganho na rodada</p>
+            <p id="vlrGanho"></p>
+
+            <p>valor ganho total</p>
+            <p id="R"></p>
         </div>
+
     </div>
 
-    <!--
-    <div class="btnNextR2">
-        <button type="submit" id="proxRodada" onclick="RodadaDois()">Próxima Rodada</button>
-    </div>
-
-
-
-
-
-
-    <div id="bannerDeRodada">
-        <h1 id="informaRodadaAtual">2º Rodada</h1>
-    </div>
-    <div class="bolasSorteadas">
-        <h2>Bolas Sorteadas</h2>
-        <div class="armazenaBolasSorteadas">
-            <div class="container">
-                <div class="bs1"> <p id="n1-r2"></p> </div>
-                <div class="bs2"> <p id="n2-r2"></p> </div>
-                <div class="bs3"> <p id="n3-r2"></p> </div>
-                <div class="bs4"> <p id="n4-r2"></p> </div>
-                <div class="bs5"> <p id="n5-r2"></p></div>
-                <div class="bs6"> <p id="n6-r2"></p></div>
-                <div class="bs7"> <p id="n7-r2"></p></div>
-                <div class="bs8"> <p id="n8-r2"></p></div>
-                <div class="bs9"> <p id="n9-r2"></p></div>
-                <div class="bs10"> <p id="n10-r2"></p></div>
-            </div>
-        </div>
-    
-        <div class="armazenaBolasSorteadas">
-            <div class="container">
-                <div class="bs11"> <p id="n11-r2"></p> </div>
-                <div class="bs12"> <p id="n12-r2"></p> </div>
-                <div class="bs13"> <p id="n13-r2"></p> </div>
-                <div class="bs14"> <p id="n14-r2"></p> </div>
-                <div class="bs15"> <p id="n15-r2"></p></div>
-                <div class="bs16"> <p id="n16-r2"></p></div>
-                <div class="bs17"> <p id="n17-r2"></p></div>
-                <div class="bs18"> <p id="n18-r2"></p></div>
-                <div class="bs19"> <p id="n19-r2"></p></div>
-                <div class="bs20"> <p id="n20-r2"></p></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="bolasAcertadas">
-        <h2>Bolas Acertadas</h2>
-        <div class="armazenaBolasAcertadas">
-            <div class="container">
-                <div class="bs1"> <p id="a1-r2"></p> </div>
-                <div class="bs2"> <p id="a2-r2"></p> </div>
-                <div class="bs3"> <p id="a3-r2"></p> </div>
-                <div class="bs4"> <p id="a4-r2"></p> </div>
-                <div class="bs5"> <p id="a5-r2"></p></div>
-                <div class="bs6"> <p id="a6-r2"></p></div>
-                <div class="bs7"> <p id="a7-r2"></p></div>
-                <div class="bs8"> <p id="a8-r2"></p></div>
-                <div class="bs9"> <p id="a9-r2"></p></div>
-                <div class="bs10"> <p id="a10-r2"></p></div>
-                <div class="bs11"> <p id="a11-r2"></p> </div>
-                <div class="bs12"> <p id="a12-r2"></p> </div>
-                <div class="bs13"> <p id="a13-r2"></p> </div>
-                <div class="bs14"> <p id="a14-r2"></p> </div>
-                <div class="bs15"> <p id="a15-r2"></p></div>
-            </div>
-        </div>
-       
-    </div>
-    <div class="btnNextR3">
-        <button type="submit" id="proxRodada" onclick="preencheBolasSorteadasRodadaTres()">Próxima Rodada</button>
-    </div>
-
-
-
-
-
-
-    <div id="bannerDeRodada">
-        <h1 id="informaRodadaAtual">3º Rodada</h1>
-    </div>
-    <div class="bolasSorteadas">
-        <h2>Bolas Sorteadas</h2>
-        <div class="armazenaBolasSorteadas">
-            <div class="container">
-                <div class="bs1"> <p id="n1-r3"></p> </div>
-                <div class="bs2"> <p id="n2-r3"></p> </div>
-                <div class="bs3"> <p id="n3-r3"></p> </div>
-                <div class="bs4"> <p id="n4-r3"></p> </div>
-                <div class="bs5"> <p id="n5-r3"></p></div>
-                <div class="bs6"> <p id="n6-r3"></p></div>
-                <div class="bs7"> <p id="n7-r3"></p></div>
-                <div class="bs8"> <p id="n8-r3"></p></div>
-                <div class="bs9"> <p id="n9-r3"></p></div>
-                <div class="bs10"> <p id="n10-r3"></p></div>
-            </div>
-        </div>
-    
-        <div class="armazenaBolasSorteadas">
-            <div class="container">
-                <div class="bs11"> <p id="n11-r3"></p> </div>
-                <div class="bs12"> <p id="n12-r3"></p> </div>
-                <div class="bs13"> <p id="n13-r3"></p> </div>
-                <div class="bs14"> <p id="n14-r3"></p> </div>
-                <div class="bs15"> <p id="n15-r3"></p></div>
-                <div class="bs16"> <p id="n16-r3"></p></div>
-                <div class="bs17"> <p id="n17-r3"></p></div>
-                <div class="bs18"> <p id="n18-r3"></p></div>
-                <div class="bs19"> <p id="n19-r3"></p></div>
-                <div class="bs20"> <p id="n20-r3"></p></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="bolasAcertadas">
-        <h2>Bolas Acertadas</h2>
-        <div class="armazenaBolasAcertadas">
-            <div class="container">
-                <div class="bs1"> <p id="a1-r3"></p> </div>
-                <div class="bs2"> <p id="a2-r3"></p> </div>
-                <div class="bs3"> <p id="a3-r3"></p> </div>
-                <div class="bs4"> <p id="a4-r3"></p> </div>
-                <div class="bs5"> <p id="a5-r3"></p></div>
-                <div class="bs6"> <p id="a6-r3"></p></div>
-                <div class="bs7"> <p id="a7-r3"></p></div>
-                <div class="bs8"> <p id="a8-r3"></p></div>
-                <div class="bs9"> <p id="a9-r3"></p></div>
-                <div class="bs10"> <p id="a10-r3"></p></div>
-                <div class="bs11"> <p id="a11-r3"></p> </div>
-                <div class="bs12"> <p id="a12-r3"></p> </div>
-                <div class="bs13"> <p id="a13-r3"></p> </div>
-                <div class="bs14"> <p id="a14-r3"></p> </div>
-                <div class="bs15"> <p id="a15-r3"></p></div>
-            </div>
-        </div>
-       
-    </div>
-
-
-
-
-
-
-   
-    -->
 </body>
 </html>
+

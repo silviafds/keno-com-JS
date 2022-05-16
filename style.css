@@ -51,6 +51,11 @@ body {
     margin-bottom: 0%;
     padding-right: 0%;
     background-color: #0c151c;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    align-items: center;
 }
 
 .regras-bolas {
@@ -122,8 +127,40 @@ body {
     color: white;
     margin: 20px 15px 10px 15px;
     padding: 25px;
-}                                                               
+}          
 
+/* mostra a quantidadade de bolas que o jogador esta escolhendo*/
+
+.avisoQtdBolas {
+    width: 150px;
+    background-color: aliceblue;
+    padding: 2px;
+    border-radius: 10px;
+    border: 3px rgb(10, 143, 10) solid;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.QtdBolas {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.titulo {
+    background-color: #b3cfe1;
+}
+
+/* mostra se ja alcançou o numero maximo de bolas*/
+
+.MsgBolas {
+    display: none;
+    margin-top: 5px;
+    border: #B8000C 3px solid;
+    padding: 6px;
+    background-color: blanchedalmond;
+    border-radius: 8px;
+}
 
 /**** botao para enviar os dados ****/
 .botao {
