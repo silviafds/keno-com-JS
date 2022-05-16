@@ -195,7 +195,7 @@ body {
 .container > .bs1, .container > .bs2, .container > .bs3, .container > .bs4, .container > .bs5, .container > .bs6, .container > .bs7, .container > .bs8, .container > .bs9, .container > .bs10, .container > .bs11, .container > .bs12, .container > .bs13, .container > .bs14, .container > .bs15, .container > .bs16, .container > .bs17, .container > .bs18, .container > .bs19, .container > .bs20 {
     margin: 20px;
     border-radius: 170px;
-    border: #dc1fa7 1px solid;
+    border: #dc1fa7 2px solid;
     padding: 10px;
     width: 26px;
     background-color: aliceblue;
@@ -237,11 +237,19 @@ body {
     justify-content: center;
     align-items: center;
     width: 60%;
-    border: rgb(210, 123, 9) solid 1px;
+    border: rgb(247, 9, 204) solid 2px;
+    border-radius: 5px;
+}
+
+.banner-resultado {
+    background-color: azure;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
 }
 
 /*chama a segunda rodada*/
-
+/*
 .btnNextR2 {
     width: 250px;
     margin-left: 50px;
@@ -258,4 +266,4 @@ body {
     font-size: 17px;
     margin-bottom: 20px;
 }
-
+*/
