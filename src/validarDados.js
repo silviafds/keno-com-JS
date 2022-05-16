@@ -321,9 +321,9 @@ var contadora = 0;
 function validarDados() {
     var recebeValorApostadoJ = document.getElementById("valorAposta").value;
 
-
     if(recebeValorApostadoJ >= 1 && validaNumerosEscolhidos() >= 1 && validaNumerosEscolhidos() <= 12) {
         alert("Aposta lida com sucesso! \nVocê apostará $:" + recebeValorApostadoJ + "." + "\nSua aposta tem " + validaNumerosEscolhidos() + " números, eles são " + ordenaNumeros(vetorNumerosApostados) + "\nClique em 'OK' para iniciar o jogo");
+        preencheBolasSorteadaRodadaUm();
     } else {
         alert("Informe os dados corretos.");
     }
@@ -344,128 +344,7 @@ function ordenaNumeros(vetorNumerosDesordenados_) {
     return vetorNumerosDesordenados_;
 }
 
-
-// FINAL NOVA CONFIG
-
-
-
-// função valida o valor apostado pelo jogador
-/*
-function validaValorApostado() {
-    var valorApostado = document.getElementById("valorApostar").value;
-    
-    if(valorApostado <= 0) {
-        document.getElementById("valorApostar").style.borderColor = "red";
-        document.getElementById("iconInvalidacao").style.display = "flex";
-        document.getElementById("iconValidacao").style.display = "none";
-        return false;
-    }
-    
-    document.getElementById("valorApostar").style.border = "solid";
-    document.getElementById("valorApostar").style.borderColor = "green";
-    document.getElementById("iconValidacao").style.display = "flex";
-    document.getElementById("iconInvalidacao").style.display = "none";
-    PegaValorApostado = valorApostado;
-    verificacaoValorAposta = 1;
-    
-    return true;
-}
-
-// função valida os numeros apostados pela jogador
-function validaNumApostados() {
-    var recebeNumerosApostados = document.getElementById("numeroApostado").value;
-    var xx = recebeNumerosApostados.split(" "); //retira espaços desnecessários
-    var novoVetor = Array.from(xx); //transforma em novo array
-    
-    var vetorNumerosOrdenados = ordenaNumeros(novoVetor);
-    var recebeValorRepeticao = buscaNumerosRepetidos(vetorNumerosOrdenados); //retorna valor booleano
-    var recebeQtdNumerosApostados = validaQuantidadeNumerosApostado(vetorNumerosOrdenados);
-
-    //preenche vetor com numeros do jogador
-    for(var i = 0; i < vetorNumerosOrdenados.length; i++) {
-        vetorNumerosJogados[i] = vetorNumerosOrdenados[i];
-    }
-
-    if(recebeValorRepeticao == false && recebeQtdNumerosApostados == 0) {
-        document.getElementById("numeroApostado").style.border = "solid";
-        document.getElementById("numeroApostado").style.borderColor = "green";
-        document.getElementById("iconValidacaoNumeros").style.display = "flex"
-        document.getElementById("iconInvalidacaoNumeros").style.display = "none"
-        verificacaoNumerosApostados = 1;
-        return true;
-    } else {
-        document.getElementById("numeroApostado").style.borderColor = "red";
-        document.getElementById("iconValidacaoNumeros").style.display = "none"
-        document.getElementById("iconInvalidacaoNumeros").style.display = "flex";
-        return false;
-    }
-
-}
-
-/* Função na qual coloca os números apostados em ordem crescente 
-    @vetorOrdenado vetor com os números em ordem crescente
-*/  
-/*              FUNÇÃO COPIADA
-function ordenaNumeros(vetorNumerosDesordenados_) {
-    var vetorOrdenado = [];
-
-    for(var i = 0; i < vetorNumerosDesordenados_.length; i++) { //converte string para int
-        vetorOrdenado[i] = parseInt(vetorNumerosDesordenados_[i]);
-    }
-
-    vetorOrdenado.sort(function (a, b) { //números ficam em ordem crescente
-	    return (a > b) ? 1 : ((b > a) ? -1 : 0);
-    });
-
-    return vetorOrdenado;
-}
-
-/* Função busca elemento repetido no vetor */
-/*
-function buscaNumerosRepetidos(vetorOrdenado_) {
-    return (new Set(vetorOrdenado_)).size !== vetorOrdenado_.length;
-}
-
-/* Função valida quantidade de numeros */
-/*
-function validaQuantidadeNumerosApostado(vetorNumerosOrdenados_) {
-    if (vetorNumerosOrdenados_.length > 15 || vetorNumerosOrdenados_.length < 1) {
-        return 1;
-    }
-    PegaQtdNumerosApostados = vetorNumerosOrdenados_.length;
-    return 0;
-}
-
-/* função que mostra o valor real da aposta do jogador, apenas se ele digitou
-os valores corretos, caso contrário, o jogo não continua*/ 
-/*
-function validaDadosFornecidos() {
-    var resultadoVerificacao = verificacaoValorAposta + verificacaoNumerosApostados;
-
-    if(resultadoVerificacao == 2) {
-        alert("Aposta lida com sucesso! \nVocê apostará $:" + PegaValorApostado + "." + "\nJogará 3 rodadas, apostando $" + valorApostaPorRodada() + " créditos por rodada." + "\nSua aposta tem " + PegaQtdNumerosApostados + " números, eles são " + vetorNumerosJogados + "\n Clique em 'OK' para iniciar o jogo.");
-        //window.location.assign("introducaoAposta.html");
-        preencheBolasSorteadaRodadaUm();
-    } else {
-        alert("Dados fornecidos não estão totalmente corretos.");
-    }
-}
-
-/* função que calcula o valor que sera apostado em cada rodada*/
-/*
-function valorApostaPorRodada() {
-    var valorPorRodada = PegaValorApostado/3;
-    return valorPorRodada.toFixed(2);
-}
-
-
-
-
-
-
 /*======Essa parte corresponde ao inicio do jogo=========*/ 
-
-
 
 
 
@@ -474,19 +353,20 @@ function valorApostaPorRodada() {
 /*
 function RodadaDois() {
     preencheBolasSorteadasRodadaDois();
-}
+}*/
 
 //função que chama a proxima rodada, inicia a terceira rodada
+/*
 function RodadaTres() {
     preencheBolasSorteadasRodadaTres();
-}
+}*/
 
 // função que sorteia numeros
 function sorteiaBolas() {
     var listaOrdenada = [];
     var listaNumerosSorteados = [];
     //gera numeros ordenados
-    for(var i = 0; i < 90; i++) {
+    for(var i = 0; i < 50; i++) {
         listaOrdenada[i] = i + 1;
     }
     var tmp, n;
@@ -544,9 +424,9 @@ function comparaBolas(listaNumerosSorteados) {
     //numerosAcertados.length = 0;
     var x = 0;
     for(var i=0; i<20; i++){
-        for(var j=0; j<vetorNumerosJogados.length; j++){
-            if(listaNumerosSorteados[i] == vetorNumerosJogados[j]){
-                numerosAcertados[x] = vetorNumerosJogados[j];
+        for(var j=0; j<vetorNumerosApostados.length; j++){
+            if(listaNumerosSorteados[i] == vetorNumerosApostados[j]){
+                numerosAcertados[x] = vetorNumerosApostados[j];
                 x++;
             }
         }
@@ -582,6 +462,11 @@ function preencheBolasAcertadasRodadaUm(listaNumerosSorteados) {
     document.getElementById("a15-r1").innerHTML = numerosAcertados[15];
 }
 
+
+
+
+
+/*
 //função que preenche as bolas da 2º rodada
 function preencheBolasSorteadasRodadaDois() {
     var listaNumerosSorteados = [];
