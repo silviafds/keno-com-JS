@@ -47,7 +47,9 @@ function mudaCordeFundo(numero, gatilho) {
         case 1: 
             var container = document.getElementById("bola1");
             if (gatilho == 0) { container.style.backgroundColor = '#40b625';
-            } else { container.style.backgroundColor = '#d2d2d2';}
+            } else { container.style.backgroundColor = '#d2d2d2';
+            
+            }
             break;
         case 2: 
             var container = document.getElementById("bola2");

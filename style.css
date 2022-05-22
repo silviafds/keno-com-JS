@@ -1,7 +1,6 @@
 body {
     margin: 0%;
     padding: 0%;
-    /*background-color: #19191a;*/
     background-image: url(./FUNDO-NOVO.png);
 }
 
@@ -47,26 +46,6 @@ body {
     border: 3px solid #B8000C;
     padding: 5px;
 }
-/*
-.filho2 {
-    width: 15%;
-    height: auto;
-    float: right;
-    margin-bottom: 0%;
-    padding-right: 0%;
-    margin-left: 5px;
-    /*background-color: rgb(76, 72, 72);*/
-    /*background-color: rgb(255, 255, 255);*/
-   /* background-color: #a6a6ad;
-    background-color: #63636d;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    border-radius: 10px;
-    border: 4px solid rgb(212, 225, 41);
-}*/
 
 /**** div com as regras do jogo ****/
 .regras {
@@ -88,13 +67,6 @@ body {
     font-weight: bolder;
     font-size: 35px;
 }
-
-/*.regras-bolas {
-    background-color: rgb(117, 228, 228);
-    border-radius: 15px;
-    float: left;
-    margin: 6px 0px 6px 0px;
-}*/
 
 .bolasParaEscolher {
     display: flex;
@@ -218,7 +190,6 @@ body {
 }
 
 
-
 /***** area responsavel pelo jogo *****/
 
 
@@ -245,7 +216,7 @@ body {
 /************ primeira ancora ***********/
 html {
     scroll-behavior: smooth;
-  }
+}
 
 /*div que guarda as bolas sorteadas*/
 .bolasSorteadas {
@@ -254,7 +225,6 @@ html {
     justify-content: center;
     align-items: center;
     background-color: #19191a;
-    /*background-image: url(./icones/fundo.png);*/
     color: rgb(8, 7, 7);
     width: 100%;
     height: auto;
@@ -282,7 +252,6 @@ html {
     justify-content: center;
     align-items: center;
     background-color: #19191a;
-    /*background-image: url(./icones/fundo.png); */                                                                                                                                                                                 
     color: rgb(8, 7, 7);
     width: 100%;
     height: auto;
