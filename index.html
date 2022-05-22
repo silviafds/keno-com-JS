@@ -101,8 +101,8 @@
             
             <div class="divisoria">
                 <div class="MsgBolas" id="MsgBolasMax">
-                    <p class="MsgBolasMax">Você escolheu o número máximo de bolas.</p>
-                    Número máximo de bolas escolhidod
+                    <p class="MsgBolasMax">Número máximo de bolas escolhido.</p>
+                    
                 </div>
 
                 <div class="avisoQtdBolas">
@@ -116,10 +116,6 @@
                     </form>
                 </div>
     
-                
-
-                
-
                 <div class="botaoDados">
                     <button type="submit" class="botao" id="btnEnvioDados" onclick="validarDados()">Enviar dados</button>
                 </div>
@@ -132,12 +128,18 @@
         <p id="tamVetoSemEspaco"></p>
 
  
+        
+
+       
+    </div>
+
+    <div class="sort">
         <div id="bannerDeRodada">
-            <h1 id="informaRodadaAtual">1º Rodada</h1>
+            <h1 id="informaRodadaAtual">Bolas Sorteadas</h1>
         </div>
 
         <div class="bolasSorteadas">
-            <h2>Bolas Sorteadas</h2>
+            
             <div class="armazenaBolasSorteadas">
                 <div class="container">
                     <div class="bs1"> <p id="n1"></p> </div>
@@ -167,10 +169,15 @@
                     <div class="bs20"> <p id="n20"></p></div>
                 </div>
             </div>
+
         </div>
 
         <div class="bolasAcertadas">
-            <h2>Bolas Acertadas</h2>
+            
+            <div id="bannerAcertadas">
+                <h1>Bolas Acertadas</h1>
+            </div>
+            
             <div class="armazenaBolasAcertadas">
                 <div class="container">
                     <div class="bs1"> <p id="a1-r1"></p> </div>
@@ -187,42 +194,47 @@
                     <div class="bs12"> <p id="a12-r1"></p> </div>
                 </div>
             </div>
-        <div class="btn">
-                <button onclick="preencheInterface()" class="botaoResultado">Mostrar Resultado</button>
-        </div>
-    </div>
 
+            <div class="btn">
+                    <button onclick="preencheInterface()" class="botaoResultado">Mostrar Resultado</button>
+            </div>
 
-
-    <div class="banner-resultado">
-        <H1>Resultado</H1>
-
-        <div class="dinheiroApostado">
-            <p>Você apostou $: </p>
-            <p id="retornoDinheiro"></p>
         </div>
 
-        <div class="numerosApostado">
-            <p>Apostou o(s) número(s): </p>
-            <p id="numApost"></p>
+
+
+
+
+        <div class="banner-resultado">
+            <H1>Resultado</H1>
+
+            <div class="dinheiroApostado">
+                <p>Você apostou $: </p>
+                <p id="retornoDinheiro"></p>
+            </div>
+
+            <div class="numerosApostado">
+                <p>Apostou o(s) número(s): </p>
+                <p id="numApost"></p>
+            </div>
+
+            <div class="valorRecebidoRodada">
+                <p>Você ganhou nesta rodada: </p>
+                <p id="valorRod"></p>
+            </div>
+
+            <div class="retornoFinal">
+                <p>Você sai do jogo com $: </p>
+                <p id="RecebeuFinal"></p>
+            </div>
+
+            <div class="BolasOk">
+                <p>Você acertou as bolas: </p>
+                <p id="acertoBall"></p>
+            </div>
         </div>
 
-        <div class="valorRecebidoRodada">
-            <p>Você ganhou nesta rodada: </p>
-            <p id="valorRod"></p>
-        </div>
-
-        <div class="retornoFinal">
-            <p>Você sai do jogo com $: </p>
-            <p id="RecebeuFinal"></p>
-        </div>
-
-        <div class="BolasOk">
-            <p>Você acertou as bolas: </p>
-            <p id="acertoBall"></p>
-        </div>
-    </div>
-
+    </div>  
 </body>
 </html>
 

@@ -347,7 +347,7 @@ function validarDados() {
         preencheBolasSorteadaRodadaUm();
 
     } else {
-        alert("Informe os dados corretos.");
+        alert("Número máximo de bolas é 12 e valor minimo de aposta é R$: 1,00.");
     }
 }
 
