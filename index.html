@@ -98,100 +98,98 @@
                     <div class="be50" onclick="bolasEscolhidas(50)" id="bola50"> <p>50</p> </div>
                 </div>
             </div>
+            
+            <div class="divisoria">
+                <div class="MsgBolas" id="MsgBolasMax">
+                    <p class="MsgBolasMax">Você escolheu o número máximo de bolas.</p>
+                    Número máximo de bolas escolhidod
+                </div>
 
-            <div class="valorDeAposta">
-                <form action="get" id="formulario">
-                    <input type="number" name="valorAposta" id="valorAposta" placeholder="Valor da aposta" class="valorAposta">
-                </form>
-            </div>
-        </div>
+                <div class="avisoQtdBolas">
+                    <div class="titulo"><h4>Número Bolas Escolhidas</h4></div>
+                    <p class="QtdBolas" id="QtdBolasEsc"></p>
+                </div>
 
-        <div class="filho2">
-            <div class="regras">
-                <h1>Regras</h1>
-                <p>* O valor mínimo de aposta é R$: 1,00 (um real).</p>
-                <p>* Escolher no mínimo 1 número e no máximo 12 números entre 1 e 50, sem que haja repetição.</p>
-            </div>
-
-            <div class="avisoQtdBolas">
-                <div class="titulo"><h4>Quantidade Bolas Escolhidas</h4></div>
-                <p class="QtdBolas" id="QtdBolasEsc"></p>
-            </div>
-
-            <div class="MsgBolas" id="MsgBolasMax">
-                <p class="MsgBolasMax">Você escolheu o número máximo de bolas.</p>
-            </div>
-        </div>
-
-    </div>
-
-    <p id="debug"></p>
-    <p id="tamanhoVetor"></p>
-    <p id="tamVetoSemEspaco"></p>
-
-    <div class="botaoDados">
-        <button type="submit" class="botao" id="btnEnvioDados" onclick="validarDados()">Enviar dados</button>
-    </div>
+                <div class="valorDeAposta">
+                    <form action="get" id="formulario">
+                        <input type="number" name="valorAposta" id="valorAposta" placeholder="Valor minímo aposta R$: 1,00" class="valorAposta">
+                    </form>
+                </div>
     
+                
+
+                
+
+                <div class="botaoDados">
+                    <button type="submit" class="botao" id="btnEnvioDados" onclick="validarDados()">Enviar dados</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <p id="debug"></p>
+        <p id="tamanhoVetor"></p>
+        <p id="tamVetoSemEspaco"></p>
+
  
-    <div id="bannerDeRodada">
-        <h1 id="informaRodadaAtual">1º Rodada</h1>
-    </div>
+        <div id="bannerDeRodada">
+            <h1 id="informaRodadaAtual">1º Rodada</h1>
+        </div>
 
-    <div class="bolasSorteadas">
-        <h2>Bolas Sorteadas</h2>
-        <div class="armazenaBolasSorteadas">
-            <div class="container">
-                <div class="bs1"> <p id="n1"></p> </div>
-                <div class="bs2"> <p id="n2"></p> </div>
-                <div class="bs3"> <p id="n3"></p> </div>
-                <div class="bs4"> <p id="n4"></p> </div>
-                <div class="bs5"> <p id="n5"></p></div>
-                <div class="bs6"> <p id="n6"></p></div>
-                <div class="bs7"> <p id="n7"></p></div>
-                <div class="bs8"> <p id="n8"></p></div>
-                <div class="bs9"> <p id="n9"></p></div>
-                <div class="bs10"> <p id="n10"></p></div>
+        <div class="bolasSorteadas">
+            <h2>Bolas Sorteadas</h2>
+            <div class="armazenaBolasSorteadas">
+                <div class="container">
+                    <div class="bs1"> <p id="n1"></p> </div>
+                    <div class="bs2"> <p id="n2"></p> </div>
+                    <div class="bs3"> <p id="n3"></p> </div>
+                    <div class="bs4"> <p id="n4"></p> </div>
+                    <div class="bs5"> <p id="n5"></p></div>
+                    <div class="bs6"> <p id="n6"></p></div>
+                    <div class="bs7"> <p id="n7"></p></div>
+                    <div class="bs8"> <p id="n8"></p></div>
+                    <div class="bs9"> <p id="n9"></p></div>
+                    <div class="bs10"> <p id="n10"></p></div>
+                </div>
+            </div>
+        
+            <div class="armazenaBolasSorteadas">
+                <div class="container">
+                    <div class="bs11"> <p id="n11"></p> </div>
+                    <div class="bs12"> <p id="n12"></p> </div>
+                    <div class="bs13"> <p id="n13"></p> </div>
+                    <div class="bs14"> <p id="n14"></p> </div>
+                    <div class="bs15"> <p id="n15"></p></div>
+                    <div class="bs16"> <p id="n16"></p></div>
+                    <div class="bs17"> <p id="n17"></p></div>
+                    <div class="bs18"> <p id="n18"></p></div>
+                    <div class="bs19"> <p id="n19"></p></div>
+                    <div class="bs20"> <p id="n20"></p></div>
+                </div>
             </div>
         </div>
-    
-        <div class="armazenaBolasSorteadas">
-            <div class="container">
-                <div class="bs11"> <p id="n11"></p> </div>
-                <div class="bs12"> <p id="n12"></p> </div>
-                <div class="bs13"> <p id="n13"></p> </div>
-                <div class="bs14"> <p id="n14"></p> </div>
-                <div class="bs15"> <p id="n15"></p></div>
-                <div class="bs16"> <p id="n16"></p></div>
-                <div class="bs17"> <p id="n17"></p></div>
-                <div class="bs18"> <p id="n18"></p></div>
-                <div class="bs19"> <p id="n19"></p></div>
-                <div class="bs20"> <p id="n20"></p></div>
-            </div>
-        </div>
-    </div>
 
-    <div class="bolasAcertadas">
-        <h2>Bolas Acertadas</h2>
-        <div class="armazenaBolasAcertadas">
-            <div class="container">
-                <div class="bs1"> <p id="a1-r1"></p> </div>
-                <div class="bs2"> <p id="a2-r1"></p> </div>
-                <div class="bs3"> <p id="a3-r1"></p> </div>
-                <div class="bs4"> <p id="a4-r1"></p> </div>
-                <div class="bs5"> <p id="a5-r1"></p></div>
-                <div class="bs6"> <p id="a6-r1"></p></div>
-                <div class="bs7"> <p id="a7-r1"></p></div>
-                <div class="bs8"> <p id="a8-r1"></p></div>
-                <div class="bs9"> <p id="a9-r1"></p></div>
-                <div class="bs10"> <p id="a10-r1"></p></div>
-                <div class="bs11"> <p id="a11-r1"></p> </div>
-                <div class="bs12"> <p id="a12-r1"></p> </div>
+        <div class="bolasAcertadas">
+            <h2>Bolas Acertadas</h2>
+            <div class="armazenaBolasAcertadas">
+                <div class="container">
+                    <div class="bs1"> <p id="a1-r1"></p> </div>
+                    <div class="bs2"> <p id="a2-r1"></p> </div>
+                    <div class="bs3"> <p id="a3-r1"></p> </div>
+                    <div class="bs4"> <p id="a4-r1"></p> </div>
+                    <div class="bs5"> <p id="a5-r1"></p></div>
+                    <div class="bs6"> <p id="a6-r1"></p></div>
+                    <div class="bs7"> <p id="a7-r1"></p></div>
+                    <div class="bs8"> <p id="a8-r1"></p></div>
+                    <div class="bs9"> <p id="a9-r1"></p></div>
+                    <div class="bs10"> <p id="a10-r1"></p></div>
+                    <div class="bs11"> <p id="a11-r1"></p> </div>
+                    <div class="bs12"> <p id="a12-r1"></p> </div>
+                </div>
             </div>
+        <div class="btn">
+                <button onclick="preencheInterface()" class="botaoResultado">Mostrar Resultado</button>
         </div>
-       <div class="btn">
-            <button onclick="preencheInterface()" class="botaoResultado">Mostrar Resultado</button>
-       </div>
     </div>
 
 

@@ -1,7 +1,8 @@
 body {
     margin: 0%;
     padding: 0%;
-    background-color: #102837;
+    /*background-color: #102837;*/
+    background-color: #19191a;
 }
 
 .pai {
@@ -21,49 +22,83 @@ body {
 
 .boasVindas {
     width: 50%;
-    background-color: rgb(188, 205, 200);
+    background-color: rgb(238, 181, 181);
     border-radius: 15px;
-    margin: 10px 0px 10px 0px;
+    margin: 30px 0px 30px 0px;
     text-align: center;
+    border: #ff7003 4px solid;
 }
 
 .div-mae {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     text-align: center;
     align-content: center;
     margin-top: 15px;
 }
 
 .filho1 {
-    width: 65%;
+    width: 100%;
     height: auto;
     margin-bottom: 0%;
     padding-right: 0%;
-    background-color: #25577d;
+    /*background-color: rgba(187, 198, 186, 0.918);*/
+    /*background-color: rgb(249, 255, 254);*/
+    /*background-color: rgb(246, 245, 243);*/
+    /*background-color: #181717;*/
+    background-color: #63636d;
+    border-radius: 10px;
+    border: 3px solid rgb(212, 225, 41);
     padding: 5px;
 }
-
+/*
 .filho2 {
-    width: 35%;
+    width: 15%;
     height: auto;
     float: right;
     margin-bottom: 0%;
     padding-right: 0%;
-    background-color: #0c151c;
+    margin-left: 5px;
+    /*background-color: rgb(76, 72, 72);*/
+    /*background-color: rgb(255, 255, 255);*/
+   /* background-color: #a6a6ad;
+    background-color: #63636d;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-content: center;
     align-items: center;
+    border-radius: 10px;
+    border: 4px solid rgb(212, 225, 41);
+}*/
+
+/**** div com as regras do jogo ****/
+.regras {
+    background-color: #d2d2d2;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    height: auto;
+    border-radius: 10px;
+    border: 6px double #31ae15;
+    color: rgb(0, 0, 0);
+    margin: 20px 15px 10px 15px;
+    padding: 25px;
+    font-weight: bolder;
+}        
+
+.regras > h1 {
+    font-weight: bolder;
+    font-size: 35px;
 }
 
-.regras-bolas {
-    background-color: azure;
+/*.regras-bolas {
+    background-color: rgb(117, 228, 228);
     border-radius: 15px;
     float: left;
     margin: 6px 0px 6px 0px;
-}
+}*/
 
 .bolasParaEscolher {
     display: flex;
@@ -83,23 +118,26 @@ body {
 
 .linha-um > .be1, .linha-um > .be2, .linha-um > .be3, .linha-um > .be4, .linha-um > .be5, .linha-um > .be6, .linha-um > .be7, .linha-um > .be8, .linha-um > .be9, .linha-um > .be10, .linha-um > .be11, .linha-um > .be12, .linha-um > .be13, .linha-um > .be14, .linha-um > .be15, .linha-um > .be16, .linha-um > .be17, .linha-um > .be18, .linha-um > .be19, .linha-um > .be20, .linha-um > .be21, .linha-um > .be22, .linha-um > .be23, .linha-um > .be24, .linha-um > .be25, .linha-um > .be26, .linha-um > .be27, .linha-um > .be28, .linha-um > .be29, .linha-um > .be30, .linha-um > .be31, .linha-um > .be32, .linha-um > .be33, .linha-um > .be34, .linha-um > .be35, .linha-um > .be36, .linha-um > .be37, .linha-um > .be38, .linha-um > .be39, .linha-um > .be40, .linha-um > .be41, .linha-um > .be42, .linha-um > .be43, .linha-um > .be44, .linha-um > .be45, .linha-um > .be46, .linha-um > .be47, .linha-um > .be48, .linha-um > .be49, .linha-um > .be50 {
     margin: 15px 15px 5px 15px;
-    border-radius: 100px;
-    border: #b00e82 2px solid;
+    border-radius: 70px;
+    border: #4b207f 3px solid;
     padding: 10px;
-    width: 26px;
-    background-color: #b3cfe1;
+    width: 36px;
     font-weight: bolder;
     font-size: 18px;
+    /*background-color: #197c1b;*/
+    background-color: #c7c5c5;
+    color: black;
+    box-shadow: 2px 2px 2px #4b207f;
 }
 
 .linha-um > .be1:hover, .linha-um > .be2:hover, .linha-um > .be3:hover, .linha-um > .be4:hover, .linha-um > .be5:hover, .linha-um > .be6:hover, .linha-um > .be7:hover, .linha-um > .be8:hover, .linha-um > .be9:hover, .linha-um > .be10:hover, .linha-um > .be11:hover, .linha-um > .be12:hover, .linha-um > .be13:hover, .linha-um > .be14:hover, .linha-um > .be15:hover, .linha-um > .be16:hover, .linha-um > .be17:hover, .linha-um > .be18:hover, .linha-um > .be19:hover, .linha-um > .be20:hover, .linha-um > .be21:hover, .linha-um > .be22:hover, .linha-um > .be23:hover, .linha-um > .be24:hover, .linha-um > .be25:hover, .linha-um > .be26:hover, .linha-um > .be27:hover, .linha-um > .be28:hover, .linha-um > .be29:hover, .linha-um > .be30:hover, .linha-um > .be31:hover, .linha-um > .be32:hover, .linha-um > .be33:hover, .linha-um > .be34:hover, .linha-um > .be35:hover, .linha-um > .be36:hover, .linha-um > .be37:hover, .linha-um > .be38:hover, .linha-um > .be39:hover, .linha-um > .be40:hover, .linha-um > .be41:hover, .linha-um > .be42:hover, .linha-um > .be43:hover, .linha-um > .be44:hover, .linha-um > .be45:hover, .linha-um > .be46:hover, .linha-um > .be47:hover, .linha-um > .be48:hover, .linha-um > .be49:hover, .linha-um > .be50:hover {
-    background-color: rgb(210, 207, 52);
+    background-color: rgb(230, 224, 40);
 }
 
 /* div responsavel sobre valor de aposta*/
 .valorDeAposta {
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -110,36 +148,33 @@ body {
 .valorAposta {
     padding: 15px;
     border-radius: 10px;
-    border: solid 2px rgb(36, 200, 36);
-    width: 200px;
+    border: solid 4px rgb(32, 154, 10);
+    width: 280px;
+    font-weight: bolder;
+    font-size: 15px;
+    color: black;
 }
 
-/**** div com as regras do jogo ****/
-.regras {
-    background-color: #102837;
+.divisoria {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-content: center;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid #B8000C;
-    color: white;
-    margin: 20px 15px 10px 15px;
-    padding: 25px;
-}          
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
 
 /* mostra a quantidadade de bolas que o jogador esta escolhendo*/
 
 .avisoQtdBolas {
-    width: 150px;
-    background-color: aliceblue;
+    width: 180px;
+    background-color: rgb(252, 254, 255);
     padding: 2px;
     border-radius: 10px;
-    border: 3px rgb(10, 143, 10) solid;
+    border: 4px rgb(21, 138, 1) dashed;
     display: flex;
     flex-direction: column;
-    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 .QtdBolas {
@@ -148,7 +183,8 @@ body {
 }
 
 .titulo {
-    background-color: #b3cfe1;
+    background-color: #b0b7bb;
+    border-radius: 6px;
 }
 
 /* mostra se ja alcançou o numero maximo de bolas*/
@@ -158,22 +194,26 @@ body {
     margin-top: 5px;
     border: #B8000C 3px solid;
     padding: 6px;
-    background-color: blanchedalmond;
+    background-color: rgb(246, 241, 233);
     border-radius: 8px;
+    width: 150px;
+    margin-left: 8px;
+    margin-top: 20px;
 }
 
 /**** botao para enviar os dados ****/
 .botao {
     background-color: darkgreen;
-    width: 250px;
+    width: 160px;
     padding: 12px;
     border-radius: 10px;
     border: 2px solid white;
     color: white;
     font-weight: bold;
     font-size: 17px;
-    margin-top: 0;
+    margin-top: 20px;
     margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 .botao:hover {
@@ -192,12 +232,13 @@ body {
     flex-direction: column;
     text-align: center;
     align-content: center;
-    background-color: #102837;
+    /*background-color: #102837;*/
+    background-color: #333;
     color: white;
     margin-top: 20px;
     border: #B8000C solid 2px;
     border-radius: 30px;
-    width: 80%;
+    width: 120%;
 }
 
 
@@ -207,7 +248,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #102837;
+    /*background-color: #102837;*/
+    background-color: #333;
     color: white;
     width: 100%;
     height: auto;
@@ -253,7 +295,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #102837;
+    /*background-color: #102837;*/
+    background-color: #333;
     color: white;
     width: 100%;
     height: auto;
