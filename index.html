@@ -117,7 +117,7 @@
                 </div>
     
                 <div class="botaoDados">
-                    <button type="submit" class="botao" id="btnEnvioDados" onclick="validarDados()">Enviar dados</button>
+                    <a href="#ancoraUm"><button type="submit" class="botao" id="btnEnvioDados" onclick="validarDados()">Enviar dados</button></a>
                 </div>
             </div>
             
@@ -128,12 +128,9 @@
         <p id="tamVetoSemEspaco"></p>
 
  
-        
-
-       
     </div>
 
-    <div class="sort">
+    <div class="sort" id="ancoraUm">
         <div id="bannerDeRodada">
             <h1 id="informaRodadaAtual">Bolas Sorteadas</h1>
         </div>
@@ -197,45 +194,45 @@
             </div>
 
             <div class="btn">
-                    <button onclick="preencheInterface()" class="botaoResultado">Mostrar Resultado</button>
+                <a href="#ancoraDois"><button onclick="preencheInterface()" class="botaoResultado">Mostrar Resultado</button></a>
+                
             </div>
 
-        </div>
-
-
-
-
-
-        <div class="banner-resultado">
-            <H1>Resultado</H1>
-
-            <div class="dinheiroApostado">
-                <p>Você apostou $: </p>
-                <p id="retornoDinheiro"></p>
-            </div>
-
-            <div class="numerosApostado">
-                <p>Apostou o(s) número(s): </p>
-                <p id="numApost"></p>
-            </div>
-
-            <div class="valorRecebidoRodada">
-                <p>Você ganhou nesta rodada: </p>
-                <p id="valorRod"></p>
-            </div>
-
-            <div class="retornoFinal">
-                <p>Você sai do jogo com $: </p>
-                <p id="RecebeuFinal"></p>
-            </div>
-
-            <div class="BolasOk">
-                <p>Você acertou as bolas: </p>
-                <p id="acertoBall"></p>
-            </div>
         </div>
 
     </div>  
+
+
+    <div class="banner-resultado" id="ancoraDois">
+        <div class="result">
+            <H1>Resultado</H1>
+        </div>
+        
+        <div class="dinheiroApostado">
+            <p>Você apostou $: </p>
+            <p id="retornoDinheiro"></p>
+        </div>
+
+        <div class="numerosApostado">
+            <p>Apostou o(s) número(s): </p>
+            <p id="numApost"></p>
+        </div>
+
+        <div class="valorRecebidoRodada">
+            <p>Você ganhou nesta rodada: </p>
+            <p id="valorRod"></p>
+        </div>
+
+        <div class="retornoFinal">
+            <p>Você sai do jogo com $: </p>
+            <p id="RecebeuFinal"></p>
+        </div>
+
+        <div class="BolasOk">
+            <p>Você acertou as bolas: </p>
+            <p id="acertoBall"></p>
+        </div>
+    </div>
 </body>
 </html>
 

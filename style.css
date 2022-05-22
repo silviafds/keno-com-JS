@@ -245,6 +245,10 @@ body {
     margin-bottom: 40px;
 }
 
+/************ primeira ancora ***********/
+html {
+    scroll-behavior: smooth;
+  }
 
 /*div que guarda as bolas sorteadas*/
 .bolasSorteadas {
@@ -311,6 +315,7 @@ body {
     border-radius: 10px;
     margin: 10px 0px 20px 0px;
     background-color: rgb(224, 233, 219);
+    padding: 0px 30px 0px 30px;
 }
 
 .container {
@@ -361,31 +366,46 @@ body {
 .banner-resultado {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    align-content: center;
     align-items: center;
-    justify-content: center;
-    background: #9ac3dc;
-    width: 1000px;
-    margin-bottom: 50px;
+    
+    background-color: #63636d;
+    color: black;
+    margin-top: 20px;
+    border: #B8000C solid 2px;
     border-radius: 5px;
-    border: #f47d06 2px solid;
+    width: 70%;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
 }
 
-.banner-resultado > div {
-    font-weight: bolder;
+.result {
+    background-color: #B8000C;
+    color: #ffff;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
-.dinheiroApostado {
+.dinheiroApostado, .numerosApostado, .valorRecebidoRodada, .retornoFinal, .BolasOk {
     width: 800px;
-    background-color: rgb(187, 240, 112);
+    background-color: #29292a;
     border-radius: 7px;
-    border: #f47d06 2px solid;
+    border: #29292a 2px solid;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
+    
 }
 
+.dinheiroApostado > p, .numerosApostado > p, .valorRecebidoRodada > p, .retornoFinal > p, .BolasOk > p {
+    color: #ffff;
+    font-size: 18px;
+    font-weight: 800;
+}
+/*
 .numerosApostado {
     width: 800px;
     background-color: rgb(187, 240, 112);
@@ -432,7 +452,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
-}
+}*/
 
 /** botao resultado **/
 .botaoResultado {
@@ -444,6 +464,7 @@ body {
     font-size: 16px;
     font-weight: bolder;
     color: white;
+    margin-top: 20px;
 }
 
 .botaoResultado:hover {

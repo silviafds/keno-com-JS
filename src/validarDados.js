@@ -344,7 +344,8 @@ function validarDados() {
     aposta = recebeValorApostadoJ;
     if(recebeValorApostadoJ >= 1 && validaNumerosEscolhidos() >= 1 && validaNumerosEscolhidos() <= 12) {
         alert("Aposta lida com sucesso! \nVocê apostará $:" + recebeValorApostadoJ + "." + "\nSua aposta tem " + validaNumerosEscolhidos() + " números, eles são " + ordenaNumeros(vetorNumerosApostados) + "\nClique em 'OK' para iniciar o jogo");
-        preencheBolasSorteadaRodadaUm();
+        //preencheBolasSorteadaRodadaUm();
+        setTimeout(preencheBolasSorteadaRodadaUm, 2000);
 
     } else {
         alert("Número máximo de bolas é 12 e valor minimo de aposta é R$: 1,00.");
