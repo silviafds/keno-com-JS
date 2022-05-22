@@ -1,8 +1,8 @@
 body {
     margin: 0%;
     padding: 0%;
-    /*background-color: #102837;*/
-    background-color: #19191a;
+    /*background-color: #19191a;*/
+    background-image: url(./FUNDO-NOVO.png);
 }
 
 .pai {
@@ -42,13 +42,9 @@ body {
     height: auto;
     margin-bottom: 0%;
     padding-right: 0%;
-    /*background-color: rgba(187, 198, 186, 0.918);*/
-    /*background-color: rgb(249, 255, 254);*/
-    /*background-color: rgb(246, 245, 243);*/
-    /*background-color: #181717;*/
     background-color: #63636d;
     border-radius: 10px;
-    border: 3px solid rgb(212, 225, 41);
+    border: 3px solid #B8000C;
     padding: 5px;
 }
 /*
@@ -124,6 +120,7 @@ body {
     width: 36px;
     font-weight: bolder;
     font-size: 18px;
+    background-color: #B8000C;
     /*background-color: #197c1b;*/
     background-color: #c7c5c5;
     color: black;
@@ -257,6 +254,7 @@ html {
     justify-content: center;
     align-items: center;
     background-color: #19191a;
+    /*background-image: url(./icones/fundo.png);*/
     color: rgb(8, 7, 7);
     width: 100%;
     height: auto;
@@ -284,6 +282,7 @@ html {
     justify-content: center;
     align-items: center;
     background-color: #19191a;
+    /*background-image: url(./icones/fundo.png); */                                                                                                                                                                                 
     color: rgb(8, 7, 7);
     width: 100%;
     height: auto;
@@ -363,6 +362,26 @@ html {
 
 /****** corresponde aos resultados ******/
 
+/** botao resultado **/
+.botaoResultado {
+    background-color: darkgreen;
+    padding: 15px;
+    border: white 1px solid;
+    border-radius: 8px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: bolder;
+    color: white;
+    margin-top: 20px;
+}
+
+.botaoResultado:hover {
+    background-color: #5acd0e;
+}
+
+
+/******* informações de resultado ********/
+
 .banner-resultado {
     display: flex;
     flex-direction: column;
@@ -405,68 +424,4 @@ html {
     font-size: 18px;
     font-weight: 800;
 }
-/*
-.numerosApostado {
-    width: 800px;
-    background-color: rgb(187, 240, 112);
-    border-radius: 7px;
-    border: #f47d06 2px solid;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
 
-.valorRecebidoRodada {
-    width: 800px;
-    background-color: rgb(187, 240, 112);
-    border-radius: 7px;
-    border: #f47d06 2px solid;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.retornoFinal {
-    width: 800px;
-    background-color: rgb(187, 240, 112);
-    border-radius: 7px;
-    border: #f47d06 2px solid;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.BolasOk {
-    width: 800px;
-    background-color: rgb(187, 240, 112);
-    border-radius: 7px;
-    border: #f47d06 2px solid;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}*/
-
-/** botao resultado **/
-.botaoResultado {
-    background-color: darkgreen;
-    padding: 15px;
-    border: white 1px solid;
-    border-radius: 8px;
-    width: 200px;
-    font-size: 16px;
-    font-weight: bolder;
-    color: white;
-    margin-top: 20px;
-}
-
-.botaoResultado:hover {
-    background-color: #5acd0e;
-}
