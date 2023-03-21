@@ -13,10 +13,14 @@ body {
 
 .barraSuperior {
     width: 100%;
-    height: 50px;
+    height: 40px;
     background-color: #B8000C;
     margin: 0% 0px 0px 0px;
-    padding: 10px 0px 20px 0px;
+    padding: 5px 0px 20px 0px;
+}
+
+.menu {
+    size: 15px;
 }
 
 .boasVindas {
@@ -85,7 +89,7 @@ body {
 }
 
 .linha-um > .be1, .linha-um > .be2, .linha-um > .be3, .linha-um > .be4, .linha-um > .be5, .linha-um > .be6, .linha-um > .be7, .linha-um > .be8, .linha-um > .be9, .linha-um > .be10, .linha-um > .be11, .linha-um > .be12, .linha-um > .be13, .linha-um > .be14, .linha-um > .be15, .linha-um > .be16, .linha-um > .be17, .linha-um > .be18, .linha-um > .be19, .linha-um > .be20, .linha-um > .be21, .linha-um > .be22, .linha-um > .be23, .linha-um > .be24, .linha-um > .be25, .linha-um > .be26, .linha-um > .be27, .linha-um > .be28, .linha-um > .be29, .linha-um > .be30, .linha-um > .be31, .linha-um > .be32, .linha-um > .be33, .linha-um > .be34, .linha-um > .be35, .linha-um > .be36, .linha-um > .be37, .linha-um > .be38, .linha-um > .be39, .linha-um > .be40, .linha-um > .be41, .linha-um > .be42, .linha-um > .be43, .linha-um > .be44, .linha-um > .be45, .linha-um > .be46, .linha-um > .be47, .linha-um > .be48, .linha-um > .be49, .linha-um > .be50 {
-    margin: 15px 15px 5px 15px;
+    margin: 15px 8px 5px 8px;
     border-radius: 70px;
     border: #4b207f 3px solid;
     padding: 10px;
@@ -196,7 +200,13 @@ body {
 
 /*banner que informa qual a rodada atual*/
 .sort {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
     width: 80%;
+    margin-top: 75px;
+    margin-bottom: 170px;
 }
 
 #bannerDeRodada {
